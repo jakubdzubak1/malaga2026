@@ -152,6 +152,34 @@ hr.divider{border:none;border-top:1px solid var(--sand);margin:48px 0;}
 
 footer{background:var(--dark);color:rgba(255,255,255,.4);text-align:center;padding:22px;font-size:12px;margin-top:56px;}
 
+/* TABLE OF CONTENTS */
+.toc{background:#fff;border-radius:14px;box-shadow:0 2px 16px rgba(0,0,0,.06);padding:20px 24px;margin-bottom:40px;}
+.toc-title{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--primary);margin-bottom:14px;}
+.toc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:4px 16px;}
+.toc-item{display:flex;align-items:center;gap:8px;padding:5px 0;border-bottom:1px solid var(--sand);font-size:13px;cursor:pointer;color:var(--text);text-decoration:none;transition:color .15s;}
+.toc-item:hover{color:var(--primary);}
+.toc-item:last-child{border-bottom:none;}
+.toc-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;}
+
+/* COLLAPSIBLE SECTIONS */
+.collapsible-header{cursor:pointer;user-select:none;display:flex;justify-content:space-between;align-items:flex-start;}
+.collapsible-header:hover .collapse-toggle{opacity:1;}
+.collapse-toggle{font-size:18px;color:var(--muted);opacity:.5;transition:transform .25s,opacity .15s;line-height:1;margin-top:4px;flex-shrink:0;}
+.collapse-toggle.open{transform:rotate(180deg);}
+.collapsible-body{overflow:hidden;transition:max-height .3s ease,opacity .25s ease;}
+.collapsible-body.collapsed{max-height:0!important;opacity:0;}
+
+/* TODO TABLE */
+.todo-table{width:100%;border-collapse:collapse;font-size:13px;background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 2px 16px rgba(0,0,0,.06);}
+.todo-table th{text-align:left;padding:10px 14px;background:var(--secondary);color:#fff;font-weight:600;font-size:12px;}
+.todo-table td{padding:10px 14px;border-bottom:1px solid var(--sand);vertical-align:middle;}
+.todo-table tr:last-child td{border-bottom:none;}
+.todo-table tr:nth-child(even) td{background:rgba(0,0,0,.02);}
+.todo-status{display:inline-block;padding:3px 10px;border-radius:20px;font-size:11px;font-weight:700;white-space:nowrap;}
+.todo-done{background:#E8F0E0;color:#3A6B20;}
+.todo-pending{background:#FDECEA;color:#C41E3A;}
+.todo-partial{background:#FDF5E0;color:#8A5A10;}
+
 @media(max-width:640px){
   .hero{padding:36px 16px;}
   .wrap{padding:32px 16px;}
@@ -243,6 +271,26 @@ footer{background:var(--dark);color:rgba(255,255,255,.4);text-align:center;paddi
     </div>
   </div>
 
+  <!-- TABLE OF CONTENTS -->
+  <div class="toc">
+    <div class="toc-title">Contents</div>
+    <div class="toc-grid">
+      <a class="toc-item" onclick="jumpToDay('d6')"><div class="toc-dot" style="background:var(--secondary)"></div>Mon 6 Jul · Arrival</a>
+      <a class="toc-item" onclick="jumpToDay('d7')"><div class="toc-dot" style="background:#2B5FA8"></div>Tue 7 Jul · Work + Alcazaba evening</a>
+      <a class="toc-item" onclick="jumpToDay('d8')"><div class="toc-dot" style="background:#2B5FA8"></div>Wed 8 Jul · Work + Picasso evening</a>
+      <a class="toc-item" onclick="jumpToDay('d9')"><div class="toc-dot" style="background:var(--primary)"></div>Thu 9 Jul · Car pickup + Ronda</a>
+      <a class="toc-item" onclick="jumpToDay('d10')"><div class="toc-dot" style="background:var(--primary)"></div>Fri 10 Jul · South route → Málaga</a>
+      <a class="toc-item" onclick="jumpToDay('d11')"><div class="toc-dot" style="background:var(--green)"></div>Sat 11 Jul · Francisco or El Torcal</a>
+      <a class="toc-item" onclick="jumpToDay('d12')"><div class="toc-dot" style="background:var(--green)"></div>Sun 12 Jul · Francisco or El Torcal</a>
+      <a class="toc-item" onclick="jumpToDay('d13')"><div class="toc-dot" style="background:#7A1A2A"></div>Mon 13 Jul · Departure</a>
+      <a class="toc-item" href="#sec-transport"><div class="toc-dot" style="background:var(--muted)"></div>Public Transport</a>
+      <a class="toc-item" href="#sec-car"><div class="toc-dot" style="background:var(--muted)"></div>Car Rental</a>
+      <a class="toc-item" href="#sec-wishlist"><div class="toc-dot" style="background:var(--accent)"></div>Wishlist</a>
+      <a class="toc-item" href="#sec-budget"><div class="toc-dot" style="background:var(--muted)"></div>Budget</a>
+      <a class="toc-item" href="#sec-todo"><div class="toc-dot" style="background:var(--primary)"></div>✅ To-Do Checklist</a>
+    </div>
+  </div>
+
   <!-- MAP -->
   <div class="section-label">Map</div>
   <h2 class="section-title">All Locations</h2>
@@ -285,10 +333,10 @@ footer{background:var(--dark);color:rgba(255,255,255,.4);text-align:center;paddi
           <div class="tdot primary"></div>
           <div class="tcontent">
             <div class="t-title">Land Málaga Airport (AGP)</div>
-            <div class="t-desc">Late night arrival. Immigration + baggage claim ~30 min. Then take the <strong>Cercanías C1 train</strong> from the airport to city center: 12 min, ~€1.80. Trains run until ~00:40, then resume early morning. Alternatively taxi ~€20–25.</div>
+            <div class="t-desc">Late night arrival. Immigration + baggage claim ~30 min. You have a <strong>free taxi from Booking.com</strong> — check your Booking.com confirmation email for how to activate/claim it before travel. This covers the transfer to the hotel (~20 min, normally €20–25).</div>
             <div class="t-chips">
-              <span class="chip ct">🚂 C1 train: 12 min · €1.80</span>
-              <span class="chip cw">🚕 Taxi: ~€20–25</span>
+              <span class="chip todo-done" style="font-size:11px;padding:3px 9px;">🚕 Free taxi via Booking.com</span>
+              <span class="chip ct">🚂 Backup: C1 train 12 min · €1.80</span>
             </div>
           </div>
         </div>
@@ -926,7 +974,7 @@ footer{background:var(--dark);color:rgba(255,255,255,.4);text-align:center;paddi
 
   <!-- ======================== PUBLIC TRANSPORT ======================== -->
   <hr class="divider">
-  <div class="section-label">Getting Around</div>
+  <div id="sec-transport" class="section-label">Getting Around</div>
   <h2 class="section-title">Public Transport in Málaga</h2>
   <p class="section-sub">Use for all city and evening trips (7–10 July before car, and 11–13 July after returning it).</p>
 
@@ -984,7 +1032,7 @@ footer{background:var(--dark);color:rgba(255,255,255,.4);text-align:center;paddi
 
   <!-- ======================== CAR RENTAL ======================== -->
   <hr class="divider">
-  <div class="section-label">Car Rental</div>
+  <div id="sec-car" class="section-label">Car Rental</div>
   <h2 class="section-title">Rental Car — Málaga Airport</h2>
   <p class="section-sub">Pick up 9 July morning, return 13 July at AGP before your flight. 4 days total. Small car is ideal for 2 people — easy to park in Ronda's narrow streets.</p>
 
@@ -1097,7 +1145,7 @@ footer{background:var(--dark);color:rgba(255,255,255,.4);text-align:center;paddi
 
   <!-- ======================== WISHLIST ======================== -->
   <hr class="divider">
-  <div class="section-label">Wishlist</div>
+  <div id="sec-wishlist" class="section-label">Wishlist</div>
   <h2 class="section-title">On the Radar — If Time Allows</h2>
   <p class="section-sub">These didn't make the main plan but are worth knowing about. Both are east of Málaga (~55 km) and work best as a combined day trip with a rental car.</p>
 
@@ -1134,7 +1182,7 @@ footer{background:var(--dark);color:rgba(255,255,255,.4);text-align:center;paddi
 
   <!-- ======================== COST SUMMARY ======================== -->
   <hr class="divider">
-  <div class="section-label">Budget</div>
+  <div id="sec-budget" class="section-label">Budget</div>
   <h2 class="section-title">What We've Already Paid</h2>
   <p class="section-sub">Pre-paid bookings only. Car rental, activities, food and transport estimated separately.</p>
 
@@ -1179,6 +1227,97 @@ footer{background:var(--dark);color:rgba(255,255,255,.4);text-align:center;paddi
     Málaga 10–13 July accommodation (TBD) · Rental car ~€150–200 for 4 days · Activities ~€50–80/person · Food & transport ~€30–40/day for 2
   </div>
 
+  <!-- ======================== TODO ======================== -->
+  <hr class="divider">
+  <div id="sec-todo" class="section-label">Checklist</div>
+  <h2 class="section-title">To-Do Before the Trip</h2>
+  <p class="section-sub">Track what's done and what still needs booking.</p>
+
+  <table class="todo-table">
+    <thead>
+      <tr>
+        <th style="width:36px;">#</th>
+        <th>Task</th>
+        <th>Details</th>
+        <th style="width:110px;">Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="color:var(--muted);font-weight:700;">1</td>
+        <td style="font-weight:700;">✈️ Flights booked</td>
+        <td style="color:var(--muted);">FR4766 KSC→AGP 6 Jul · FR4765 AGP→KSC 13 Jul · Reservation L9H9JR</td>
+        <td><span class="todo-status todo-done">✅ Done</span></td>
+      </tr>
+      <tr>
+        <td style="color:var(--muted);font-weight:700;">2</td>
+        <td style="font-weight:700;">🏠 Málaga accommodation 6–9 Jul</td>
+        <td style="color:var(--muted);">Livensa Living Studios Feria · Confirmation 6637.633.470 · Non-refundable</td>
+        <td><span class="todo-status todo-done">✅ Done</span></td>
+      </tr>
+      <tr>
+        <td style="color:var(--muted);font-weight:700;">3</td>
+        <td style="font-weight:700;">🌉 Ronda accommodation 9–10 Jul</td>
+        <td style="color:var(--muted);">Apartamento Maicandil · Confirmation 5760.205.305 · Parking reserved</td>
+        <td><span class="todo-status todo-done">✅ Done</span></td>
+      </tr>
+      <tr>
+        <td style="color:var(--muted);font-weight:700;">4</td>
+        <td style="font-weight:700;">🏠 Málaga accommodation 10–13 Jul</td>
+        <td style="color:var(--muted);">3 nights needed after Ronda return · July peak season — book ASAP</td>
+        <td><span class="todo-status todo-pending">❌ Not booked</span></td>
+      </tr>
+      <tr>
+        <td style="color:var(--muted);font-weight:700;">5</td>
+        <td style="font-weight:700;">🚕 Airport taxi on arrival (6 Jul)</td>
+        <td style="color:var(--muted);">Free taxi from Booking.com — check confirmation email for how to claim. Arrives ~00:25, late night transfer to Livensa hotel.</td>
+        <td><span class="todo-status todo-partial">⚠️ Claim needed</span></td>
+      </tr>
+      <tr>
+        <td style="color:var(--muted);font-weight:700;">6</td>
+        <td style="font-weight:700;">🚗 Rental car — pick up 9 Jul</td>
+        <td style="color:var(--muted);">Book Seat Ibiza or similar · 4 days · full insurance · Enterprise or Alamo at AGP · return 13 Jul</td>
+        <td><span class="todo-status todo-pending">❌ Not booked</span></td>
+      </tr>
+      <tr>
+        <td style="color:var(--muted);font-weight:700;">7</td>
+        <td style="font-weight:700;">🥾 Caminito del Rey tickets</td>
+        <td style="color:var(--muted);">If adding to plan — sells out weeks ahead in July · caminitodelrey.info · ~€10/person</td>
+        <td><span class="todo-status todo-pending">⚠️ Optional</span></td>
+      </tr>
+      <tr>
+        <td style="color:var(--muted);font-weight:700;">8</td>
+        <td style="font-weight:700;">🦇 Cueva de Nerja tickets</td>
+        <td style="color:var(--muted);">If adding to plan — €15.50 online · entradas.cuevadenerja.es · July slots fill up fast</td>
+        <td><span class="todo-status todo-pending">⚠️ Optional</span></td>
+      </tr>
+      <tr>
+        <td style="color:var(--muted);font-weight:700;">9</td>
+        <td style="font-weight:700;">📱 Download Ryanair App</td>
+        <td style="color:var(--muted);">Required for digital boarding pass — printed boarding passes no longer accepted</td>
+        <td><span class="todo-status todo-pending">❌ To do</span></td>
+      </tr>
+      <tr>
+        <td style="color:var(--muted);font-weight:700;">10</td>
+        <td style="font-weight:700;">🎨 Book Picasso Museum</td>
+        <td style="color:var(--muted);">museopicassomalaga.org · €13/person · July queues 45+ min without pre-booking</td>
+        <td><span class="todo-status todo-pending">❌ To do</span></td>
+      </tr>
+      <tr>
+        <td style="color:var(--muted);font-weight:700;">11</td>
+        <td style="font-weight:700;">🎫 Get Bonobus card on arrival</td>
+        <td style="color:var(--muted);">10 trips for €8.40 · buy at estanco (tobacco shop) or EMT stop · use for all city bus trips</td>
+        <td><span class="todo-status todo-pending">❌ On arrival</span></td>
+      </tr>
+      <tr>
+        <td style="color:var(--muted);font-weight:700;">12</td>
+        <td style="font-weight:700;">🛁 Hammam Al Ándalus (optional)</td>
+        <td style="color:var(--muted);">Arab baths · book ahead · ~€30/person · open until 22:00</td>
+        <td><span class="todo-status todo-pending">⚠️ Optional</span></td>
+      </tr>
+    </tbody>
+  </table>
+
 </div><!-- .wrap -->
 
 <footer>
@@ -1190,8 +1329,53 @@ footer{background:var(--dark);color:rgba(255,255,255,.4);text-align:center;paddi
 // Jump to day section
 function jumpToDay(id) {
   var el = document.getElementById(id);
-  if (el) { el.scrollIntoView({behavior:'smooth', block:'start'}); }
+  if (el) {
+    // Expand if collapsed
+    var body = el.querySelector('.collapsible-body');
+    var toggle = el.querySelector('.collapse-toggle');
+    if (body && body.classList.contains('collapsed')) {
+      body.classList.remove('collapsed');
+      body.style.maxHeight = body.scrollHeight + 'px';
+      if (toggle) toggle.classList.add('open');
+    }
+    setTimeout(function(){ el.scrollIntoView({behavior:'smooth', block:'start'}); }, 50);
+  }
 }
+
+// Collapsible day sections
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('.day-section').forEach(function(section) {
+    var header = section.querySelector('.day-header');
+    var body = section.querySelector('.day-body');
+    if (!header || !body) return;
+
+    // Add toggle button to header
+    var btn = document.createElement('span');
+    btn.className = 'collapse-toggle open';
+    btn.innerHTML = '▾';
+    header.classList.add('collapsible-header');
+    header.appendChild(btn);
+
+    // Set initial max-height so transition works
+    body.classList.add('collapsible-body');
+    body.style.maxHeight = body.scrollHeight + 'px';
+
+    header.addEventListener('click', function() {
+      var collapsed = body.classList.contains('collapsed');
+      if (collapsed) {
+        body.classList.remove('collapsed');
+        body.style.maxHeight = body.scrollHeight + 'px';
+        btn.classList.add('open');
+      } else {
+        body.style.maxHeight = body.scrollHeight + 'px'; // set explicit before collapsing
+        requestAnimationFrame(function() {
+          body.classList.add('collapsed');
+          btn.classList.remove('open');
+        });
+      }
+    });
+  });
+});
 
 // Leaflet map
 window.addEventListener('load', function() {
