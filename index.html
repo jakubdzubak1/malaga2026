@@ -173,7 +173,7 @@ footer{background:var(--dark);color:rgba(255,255,255,.4);text-align:center;paddi
     <p class="hero-sub">7 nights · 2 people · Public transport in Málaga · Rental car for road trips · Ronda overnight included</p>
     <div class="hero-pills">
       <div class="pill"><strong>6–13 July 2026</strong>7 nights</div>
-      <div class="pill"><strong>FR4766 / FR4765</strong>Ryanair · Košice ↔ Málaga</div>
+      <div class="pill"><strong>FR4766 / FR4665</strong>Ryanair · Košice ↔ Málaga</div>
       <div class="pill"><strong>7–8 July</strong>Remote work · free after 16:00</div>
       <div class="pill"><strong>9 July</strong>Check-out · rent car · Ronda</div>
     </div>
@@ -215,7 +215,7 @@ footer{background:var(--dark);color:rgba(255,255,255,.4);text-align:center;paddi
       <div class="tl-icon">🌉</div>
       <div class="tl-date">Thu 9 Jul</div>
       <div class="tl-place">Ronda</div>
-      <div class="tl-note">checkout · car</div>
+      <div class="tl-note">checkout · car · Ronda ✅</div>
     </div>
     <div class="tl-day road" onclick="jumpToDay('d10')">
       <div class="tl-icon">🛣️</div>
@@ -297,10 +297,11 @@ footer{background:var(--dark);color:rgba(255,255,255,.4);text-align:center;paddi
           <div class="tdot green"></div>
           <div class="tcontent">
             <div class="t-title">Check in — Livensa Living Studios Feria</div>
-            <div class="t-desc">C. Baliza 2, Cruz de Humilladero. Check-in 15:00–23:00 — you arrive after midnight so contact hotel in advance (special request already noted: "we will come 07.07.2026 around 1AM"). PIN: 7234, Confirmation: 6637.633.470.</div>
+            <div class="t-desc">C. Baliza 2, Cruz de Humilladero. Check-in 15:00–23:00 — you arrive after midnight so contact hotel in advance (special request already noted: "we will come 07.07.2026 around 1AM").</div>
             <div class="t-chips">
               <span class="chip cp">✅ Already paid · non-refundable</span>
               <span class="chip ct">2 rooms · kitchenette · parking €15/day</span>
+              <span class="chip cf"><a href="malaga-accommodation.pdf" target="_blank" style="color:inherit;text-decoration:none;">📄 Booking confirmation (password protected)</a></span>
             </div>
           </div>
         </div>
@@ -627,6 +628,21 @@ footer{background:var(--dark);color:rgba(255,255,255,.4);text-align:center;paddi
           </div>
         </div>
       </div>
+
+      <hr style="border:none;border-top:1px solid var(--sand);margin:20px 0;">
+      <div class="section-label" style="margin-bottom:8px;">Your Ronda Accommodation — Booked ✅</div>
+      <div class="warn-box info" style="margin-bottom:12px;">
+        <strong>🏠 Apartamento Maicandil</strong>
+        Comandante Salvador Carrasco 23, 3ºC · 29400 Ronda, Spain<br>
+        Check-in: <strong>9 July · 15:00–23:30</strong> · Check-out: <strong>10 July · 08:00–11:00</strong><br>
+        2-bedroom apartment · 2 adults · Kitchen, washing machine, AC, WiFi, private parking (reserved) · €65.33 total<br>
+        Contact: +34 687 76 65 39 · <strong>⚠️ Non-refundable</strong><br>
+        <a href="ronda-accommodation.pdf" target="_blank" style="color:var(--secondary);font-weight:700;">📄 Booking confirmation (password protected)</a>
+      </div>
+      <div class="warn-box" style="margin-bottom:0;">
+        <strong>⏰ Check-out 08:00–11:00 — early start on 10 July</strong>
+        Check-out before 11:00, then depart toward Júzcar. Parking on-site (reserved, €15/day). Load car and leave by 09:00 to have time for all stops on the way back to Málaga.
+      </div>
     </div>
   </div>
 
@@ -882,7 +898,7 @@ footer{background:var(--dark);color:rgba(255,255,255,.4);text-align:center;paddi
           <div class="ttime">16:00</div>
           <div class="tdot accent"></div>
           <div class="tcontent">
-            <div class="t-title">✈️ Depart Málaga — FR4765</div>
+            <div class="t-title">✈️ Depart Málaga — FR4665</div>
             <div class="t-desc">Flight to Košice. Arrival 19:40.</div>
           </div>
         </div>
@@ -1067,7 +1083,7 @@ window.addEventListener('load', function() {
 
   var pts = [
     // Fixed
-    [36.675,-4.499,'#1A5C78','✈️','Málaga Airport AGP','Arrival 7 Jul 00:25 (FR4766)<br>Departure 13 Jul 16:00 (FR4765)<br>Car return 13 Jul before flight'],
+    [36.675,-4.499,'#1A5C78','✈️','Málaga Airport AGP','Arrival 7 Jul 00:25 (FR4766)<br>Departure 13 Jul 16:00 (FR4665)<br>Car return 13 Jul before flight'],
     [36.706,-4.456,'#1A5C78','🏠','Livensa Living Studios Feria','6–9 July · Pre-paid<br>C. Baliza 2, Cruz de Humilladero<br>Check-out: 9 July 12:00'],
     // Málaga city
     [36.721,-4.419,'#C05A35','🏯','Alcazaba de Málaga','11th-c Moorish fortress<br>Combined ticket €5.90 · Open until 20:00<br>Free Sun EU citizens after 14:00'],
@@ -1078,7 +1094,7 @@ window.addEventListener('load', function() {
     [36.718,-4.408,'#C05A35','🏖️','La Malagueta Beach','City beach · 20 min walk from centre<br>Sea temp ~23°C in July'],
     [36.720,-4.422,'#C05A35','☕','Casa Aranda','Famous churrería since 1932<br>Calle Herrería del Rey · €4–6/person'],
     // Road trip
-    [36.745,-5.161,'#3D7A52','🌉','Ronda','9 July overnight<br>Puente Nuevo · El Tajo gorge<br>Drive from Málaga: ~1.5h'],
+    [36.747,-5.166,'#3D7A52','🌉','Ronda — Apartamento Maicandil','9 July overnight · Booked ✅<br>Comandante Salvador Carrasco 23, 3ºC<br>Check-in 15:00–23:30 · Check-out 08:00–11:00<br>Parking on-site (reserved)'],
     [36.604,-5.164,'#3D7A52','🔵','Júzcar — Smurf Village','10 July stop · 30 min from Ronda<br>Free to visit · allow 1h'],
     [36.633,-5.012,'#3D7A52','🏔️','Mirador de Igualeja','10 July stop · On A-397<br>Best viewpoint on Ronda–Marbella route'],
     [36.510,-4.886,'#3D7A52','🏘️','Marbella Old Town','10 July lunch stop<br>Plaza de los Naranjos · Calle Carmen'],
