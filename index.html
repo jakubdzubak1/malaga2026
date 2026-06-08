@@ -1347,16 +1347,26 @@ document.addEventListener('DOMContentLoaded', function() {
     var body = section.querySelector('.day-body');
     if (!header || !body) return;
 
-    // Add toggle button to header
-    var btn = document.createElement('span');
-    btn.className = 'collapse-toggle open';
-    btn.innerHTML = '▾';
-    header.classList.add('collapsible-header');
-    header.appendChild(btn);
+    // Find existing badge and wrap it + toggle together on the right
+    var badge = header.querySelector('.day-badge');
+    var right = document.createElement('div');
+    right.style.cssText = 'display:flex;align-items:center;gap:10px;flex-shrink:0;';
 
-    // Set initial max-height so transition works
-    body.classList.add('collapsible-body');
-    body.style.maxHeight = body.scrollHeight + 'px';
+    var btn = document.createElement('span');
+    btn.className = 'collapse-toggle';
+    btn.innerHTML = '▾';
+
+    if (badge) {
+      header.removeChild(badge);
+      right.appendChild(badge);
+    }
+    right.appendChild(btn);
+    header.appendChild(right);
+    header.classList.add('collapsible-header');
+
+    // Collapsed by default
+    body.classList.add('collapsible-body', 'collapsed');
+    body.style.maxHeight = '0';
 
     header.addEventListener('click', function() {
       var collapsed = body.classList.contains('collapsed');
@@ -1365,7 +1375,7 @@ document.addEventListener('DOMContentLoaded', function() {
         body.style.maxHeight = body.scrollHeight + 'px';
         btn.classList.add('open');
       } else {
-        body.style.maxHeight = body.scrollHeight + 'px'; // set explicit before collapsing
+        body.style.maxHeight = body.scrollHeight + 'px';
         requestAnimationFrame(function() {
           body.classList.add('collapsed');
           btn.classList.remove('open');
