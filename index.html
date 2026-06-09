@@ -211,9 +211,9 @@ footer{background:var(--dark);color:rgba(255,255,255,.4);text-align:center;paddi
     <h1><span data-i18n="hero.title1">Málaga &amp;</span> <em data-i18n="hero.title2">The South</em></h1>
     <p class="hero-sub" data-i18n="hero.sub">7 nights · 2 people · Public transport in Málaga · Rental car for road trips · Ronda overnight included</p>
     <div class="lang-switch">
-      <button class="lang-btn active" data-lang="en">EN</button>
-      <button class="lang-btn" data-lang="es">ES</button>
-      <button class="lang-btn" data-lang="sk">SK</button>
+      <button class="lang-btn active" data-lang="en" onclick="applyLang('en')">EN</button>
+      <button class="lang-btn" data-lang="es" onclick="applyLang('es')">ES</button>
+      <button class="lang-btn" data-lang="sk" onclick="applyLang('sk')">SK</button>
     </div>
     <div class="hero-pills">
       <div class="pill"><strong>6–13 July 2026</strong>7 nights</div>
@@ -1595,18 +1595,13 @@ const translations = {
     "overview.label": "Resumen del viaje",
     "overview.title": "8 días de un vistazo",
     "overview.sub": "Haz clic en un día para ir a su plan.",
-    "tl.d6.date": "Lun 6 Jul", "tl.d6.place": "Llegar a
-Málaga", "tl.d6.note": "aterrizaje 00:25",
-    "tl.d7.date": "Mar 7 Jul", "tl.d7.place": "Trabajo +
-Tarde", "tl.d7.note": "libre 16:00+",
-    "tl.d8.date": "Mié 8 Jul", "tl.d8.place": "Trabajo +
-Tarde",
+    "tl.d6.date": "Lun 6 Jul", "tl.d6.place": "Llegar a Málaga", "tl.d6.note": "aterrizaje 00:25",
+    "tl.d7.date": "Mar 7 Jul", "tl.d7.place": "Trabajo + Tarde", "tl.d7.note": "libre 16:00+",
+    "tl.d8.date": "Mié 8 Jul", "tl.d8.place": "Trabajo + Tarde",
     "tl.d9.date": "Jue 9 Jul", "tl.d9.place": "Ronda", "tl.d9.note": "salida · coche · Ronda ✅",
-    "tl.d10.date": "Vie 10 Jul", "tl.d10.place": "Ruta
-Sur", "tl.d10.note": "→ Málaga",
+    "tl.d10.date": "Vie 10 Jul", "tl.d10.place": "Ruta Sur", "tl.d10.note": "→ Málaga",
     "tl.d11.date": "Sáb 11 Jul", "tl.d11.place": "Málaga",
-    "tl.d12.date": "Dom 12 Jul", "tl.d12.place": "Torcal /
-Málaga",
+    "tl.d12.date": "Dom 12 Jul", "tl.d12.place": "Torcal / Málaga",
     "tl.d13.date": "Lun 13 Jul", "tl.d13.place": "Salida", "tl.d13.note": "vuelo 16:00",
     "toc.title": "Contenido",
     "map.label": "Mapa", "map.title": "Todos los lugares",
@@ -1704,18 +1699,13 @@ Málaga",
     "overview.label": "Prehľad cesty",
     "overview.title": "8 dní na prvý pohľad",
     "overview.sub": "Klikni na deň a prejdi na plán.",
-    "tl.d6.date": "Po 6 júl", "tl.d6.place": "Príchod
-Málaga", "tl.d6.note": "pristátie 00:25",
-    "tl.d7.date": "Ut 7 júl", "tl.d7.place": "Práca +
-Večer", "tl.d7.note": "voľno 16:00+",
-    "tl.d8.date": "Str 8 júl", "tl.d8.place": "Práca +
-Večer",
+    "tl.d6.date": "Po 6 júl", "tl.d6.place": "Príchod Málaga", "tl.d6.note": "pristátie 00:25",
+    "tl.d7.date": "Ut 7 júl", "tl.d7.place": "Práca + Večer", "tl.d7.note": "voľno 16:00+",
+    "tl.d8.date": "Str 8 júl", "tl.d8.place": "Práca + Večer",
     "tl.d9.date": "Štv 9 júl", "tl.d9.place": "Ronda", "tl.d9.note": "odchod · auto · Ronda ✅",
-    "tl.d10.date": "Pia 10 júl", "tl.d10.place": "Južná
-trasa", "tl.d10.note": "→ Málaga",
+    "tl.d10.date": "Pia 10 júl", "tl.d10.place": "Južná trasa", "tl.d10.note": "→ Málaga",
     "tl.d11.date": "Sob 11 júl", "tl.d11.place": "Málaga",
-    "tl.d12.date": "Ned 12 júl", "tl.d12.place": "Torcal /
-Málaga",
+    "tl.d12.date": "Ned 12 júl", "tl.d12.place": "Torcal / Málaga",
     "tl.d13.date": "Po 13 júl", "tl.d13.place": "Odlet", "tl.d13.note": "let 16:00",
     "toc.title": "Obsah",
     "map.label": "Mapa", "map.title": "Všetky miesta",
@@ -1835,12 +1825,8 @@ function initLang() {
     btn.addEventListener('click', function() { applyLang(btn.dataset.lang); });
   });
 }
-// Script is at end of body - DOM is already ready
-if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', initLang);
-} else {
-  initLang();
-}
+// Use window.onload to run after all DOMContentLoaded handlers (incl. collapsible)
+window.addEventListener('load', initLang);
 </script>
 </body>
 </html>
