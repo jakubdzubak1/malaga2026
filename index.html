@@ -150,6 +150,13 @@ hr.divider{border:none;border-top:1px solid var(--sand);margin:48px 0;}
 .leg-item{display:flex;align-items:center;gap:7px;font-size:12px;}
 .leg-dot{width:12px;height:12px;border-radius:50%;flex-shrink:0;}
 
+
+/* LANGUAGE SWITCHER */
+.lang-switch{display:flex;gap:6px;margin-bottom:20px;}
+.lang-btn{padding:5px 14px;border-radius:20px;border:2px solid rgba(255,255,255,.35);background:transparent;color:#fff;font-size:12px;font-weight:700;letter-spacing:1px;cursor:pointer;font-family:'DM Sans',sans-serif;transition:background .15s,border-color .15s;}
+.lang-btn:hover{background:rgba(255,255,255,.15);}
+.lang-btn.active{background:var(--accent);border-color:var(--accent);color:#1a1a1a;}
+
 footer{background:var(--dark);color:rgba(255,255,255,.4);text-align:center;padding:22px;font-size:12px;margin-top:56px;}
 
 /* TABLE OF CONTENTS */
@@ -200,14 +207,19 @@ footer{background:var(--dark);color:rgba(255,255,255,.4);text-align:center;paddi
 <!-- HERO -->
 <div class="hero">
   <div class="hero-inner">
-    <span class="hero-tag">🇪🇸 Andalucía · July 2026</span>
-    <h1>Málaga &amp; <em>The South</em></h1>
-    <p class="hero-sub">7 nights · 2 people · Public transport in Málaga · Rental car for road trips · Ronda overnight included</p>
+    <span class="hero-tag" data-i18n="hero.tag">🇪🇸 Andalucía · July 2026</span>
+    <h1><span data-i18n="hero.title1">Málaga &amp;</span> <em data-i18n="hero.title2">The South</em></h1>
+    <p class="hero-sub" data-i18n="hero.sub">7 nights · 2 people · Public transport in Málaga · Rental car for road trips · Ronda overnight included</p>
+    <div class="lang-switch">
+      <button class="lang-btn active" data-lang="en">EN</button>
+      <button class="lang-btn" data-lang="es">ES</button>
+      <button class="lang-btn" data-lang="sk">SK</button>
+    </div>
     <div class="hero-pills">
       <div class="pill"><strong>6–13 July 2026</strong>7 nights</div>
-      <div class="pill"><strong>FR4766 / FR4765</strong>Ryanair · Košice ↔ Málaga</div>
-      <div class="pill"><strong>7–8 July</strong>Remote work · free after 16:00</div>
-      <div class="pill"><strong>9 July</strong>Check-out · rent car · Ronda</div>
+      <div class="pill"><strong>FR4766 / FR4765</strong><span data-i18n="pill.flight">Ryanair · Košice ↔ Málaga</span></div>
+      <div class="pill"><strong>7–8 July</strong><span data-i18n="pill.work">Remote work · free after 16:00</span></div>
+      <div class="pill"><strong>9 July</strong><span data-i18n="pill.ronda">Check-out · rent car · Ronda</span></div>
     </div>
   </div>
 </div>
@@ -216,98 +228,98 @@ footer{background:var(--dark);color:rgba(255,255,255,.4);text-align:center;paddi
 
   <!-- URGENT WARNINGS -->
   <!-- TIMELINE -->
-  <div class="section-label">Trip Overview</div>
-  <h2 class="section-title">8 Days at a Glance</h2>
-  <p class="section-sub">Click a day to jump to its plan below.</p>
+  <div class="section-label" data-i18n="overview.label">Trip Overview</div>
+  <h2 class="section-title" data-i18n="overview.title">8 Days at a Glance</h2>
+  <p class="section-sub" data-i18n="overview.sub">Click a day to jump to its plan below.</p>
   <div class="timeline" id="timeline">
     <div class="tl-day arrive" onclick="jumpToDay('d6')">
       <div class="tl-icon">✈️</div>
-      <div class="tl-date">Mon 6 Jul</div>
-      <div class="tl-place">Arrive<br>Málaga</div>
-      <div class="tl-note">land 00:25</div>
+      <div class="tl-date" data-i18n="tl.d6.date">Mon 6 Jul</div>
+      <div class="tl-place" data-i18n="tl.d6.place">Arrive<br data-i18n="tl.d11.place">Málaga</div>
+      <div class="tl-note" data-i18n="tl.d6.note">land 00:25</div>
     </div>
     <div class="tl-day work" onclick="jumpToDay('d7')">
       <div class="tl-icon">💻</div>
-      <div class="tl-date">Tue 7 Jul</div>
-      <div class="tl-place">Work +<br>Evening</div>
-      <div class="tl-note">free 16:00+</div>
+      <div class="tl-date" data-i18n="tl.d7.date">Tue 7 Jul</div>
+      <div class="tl-place" data-i18n="tl.d7.place" data-i18n="tl.d8.place">Work +<br>Evening</div>
+      <div class="tl-note" data-i18n="tl.d7.note" data-i18n="tl.d8.note">free 16:00+</div>
     </div>
     <div class="tl-day work" onclick="jumpToDay('d8')">
       <div class="tl-icon">💻</div>
-      <div class="tl-date">Wed 8 Jul</div>
+      <div class="tl-date" data-i18n="tl.d8.date">Wed 8 Jul</div>
       <div class="tl-place">Work +<br>Evening</div>
       <div class="tl-note">free 16:00+</div>
     </div>
     <div class="tl-day road" onclick="jumpToDay('d9')">
       <div class="tl-icon">🌉</div>
-      <div class="tl-date">Thu 9 Jul</div>
-      <div class="tl-place">Ronda</div>
-      <div class="tl-note">checkout · car · Ronda ✅</div>
+      <div class="tl-date" data-i18n="tl.d9.date">Thu 9 Jul</div>
+      <div class="tl-place" data-i18n="tl.d9.place">Ronda</div>
+      <div class="tl-note" data-i18n="tl.d9.note">checkout · car · Ronda ✅</div>
     </div>
     <div class="tl-day road" onclick="jumpToDay('d10')">
       <div class="tl-icon">🛣️</div>
-      <div class="tl-date">Fri 10 Jul</div>
-      <div class="tl-place">South<br>Route</div>
-      <div class="tl-note">→ Málaga</div>
+      <div class="tl-date" data-i18n="tl.d10.date">Fri 10 Jul</div>
+      <div class="tl-place" data-i18n="tl.d10.place">South<br>Route</div>
+      <div class="tl-note" data-i18n="tl.d10.note">→ Málaga</div>
     </div>
     <div class="tl-day free" onclick="jumpToDay('d11')">
       <div class="tl-icon">🌞</div>
-      <div class="tl-date">Sat 11 Jul</div>
+      <div class="tl-date" data-i18n="tl.d11.date">Sat 11 Jul</div>
       <div class="tl-place">Málaga</div>
       <div class="tl-note" style="color:var(--primary)">TBD</div>
     </div>
     <div class="tl-day free" onclick="jumpToDay('d12')">
       <div class="tl-icon">🪨</div>
-      <div class="tl-date">Sun 12 Jul</div>
-      <div class="tl-place">Torcal /<br>Málaga</div>
+      <div class="tl-date" data-i18n="tl.d12.date">Sun 12 Jul</div>
+      <div class="tl-place" data-i18n="tl.d12.place">Torcal /<br>Málaga</div>
       <div class="tl-note" style="color:var(--primary)">TBD</div>
     </div>
     <div class="tl-day depart" onclick="jumpToDay('d13')">
       <div class="tl-icon">✈️</div>
-      <div class="tl-date">Mon 13 Jul</div>
-      <div class="tl-place">Depart</div>
-      <div class="tl-note">flight 16:00</div>
+      <div class="tl-date" data-i18n="tl.d13.date">Mon 13 Jul</div>
+      <div class="tl-place" data-i18n="tl.d13.place">Depart</div>
+      <div class="tl-note" data-i18n="tl.d13.note">flight 16:00</div>
     </div>
   </div>
 
   <!-- TABLE OF CONTENTS -->
   <div class="toc">
-    <div class="toc-title">Contents</div>
+    <div class="toc-title" data-i18n="toc.title">Contents</div>
     <div class="toc-grid">
       <a class="toc-item" href="#sec-transport"><div class="toc-dot" style="background:var(--muted)"></div>Public Transport</a>
-      <a class="toc-item" href="#sec-car"><div class="toc-dot" style="background:var(--muted)"></div>Car Rental</a>
-      <a class="toc-item" href="#sec-wishlist"><div class="toc-dot" style="background:var(--accent)"></div>Wishlist</a>
-      <a class="toc-item" href="#sec-budget"><div class="toc-dot" style="background:var(--muted)"></div>Budget</a>
+      <a class="toc-item" href="#sec-car"><div class="toc-dot" style="background:var(--muted)"></div data-i18n="sec.car.label">Car Rental</a>
+      <a class="toc-item" href="#sec-wishlist"><div class="toc-dot" style="background:var(--accent)"></div data-i18n="sec.wish.label">Wishlist</a>
+      <a class="toc-item" href="#sec-budget"><div class="toc-dot" style="background:var(--muted)"></div data-i18n="sec.budget.label">Budget</a>
       <a class="toc-item" href="#sec-todo"><div class="toc-dot" style="background:var(--primary)"></div>✅ To-Do Checklist</a>
     </div>
   </div>
 
   <!-- MAP -->
-  <div class="section-label">Map</div>
-  <h2 class="section-title">All Locations</h2>
-  <p class="section-sub">City spots, road-trip stops, day trips and wishlist destinations.</p>
+  <div class="section-label" data-i18n="map.label">Map</div>
+  <h2 class="section-title" data-i18n="map.title">All Locations</h2>
+  <p class="section-sub" data-i18n="map.sub">City spots, road-trip stops, day trips and wishlist destinations.</p>
   <div class="map-wrap">
     <div id="map"></div>
     <div class="map-legend">
-      <div class="leg-item"><div class="leg-dot" style="background:#1B3A6B"></div>Fixed (airport · all accommodations)</div>
-      <div class="leg-item"><div class="leg-dot" style="background:#C41E3A"></div>Málaga city</div>
-      <div class="leg-item"><div class="leg-dot" style="background:#4A7A35"></div>Road trip stops</div>
-      <div class="leg-item"><div class="leg-dot" style="background:#E8A020"></div>Wishlist</div>
+      <div class="leg-item"><div class="leg-dot" style="background:#1B3A6B"></div><span data-i18n="map.leg1">Fixed (airport · all accommodations)</span></div>
+      <div class="leg-item"><div class="leg-dot" style="background:#C41E3A"></div><span data-i18n="map.leg2">Málaga city</span></div>
+      <div class="leg-item"><div class="leg-dot" style="background:#4A7A35"></div><span data-i18n="map.leg3">Road trip stops</span></div>
+      <div class="leg-item"><div class="leg-dot" style="background:#E8A020"></div><span data-i18n="map.leg4">Wishlist</span></div>
     </div>
   </div>
 
   <!-- ======================== DAY PLANS ======================== -->
-  <div class="section-label">Daily Plans</div>
-  <h2 class="section-title">Day by Day</h2>
+  <div class="section-label" data-i18n="days.label">Daily Plans</div>
+  <h2 class="section-title" data-i18n="days.title">Day by Day</h2>
 
   <!-- ---- 6 JULY ---- -->
   <div class="day-section" id="d6" style="margin-bottom:20px;">
     <div class="day-header">
       <div>
-        <div class="day-date-label">Monday · 6 July</div>
-        <div class="day-title">✈️ Arrival Day</div>
+        <div class="day-date-label" data-i18n="dh.d6.date">Monday · 6 July</div>
+        <div class="day-title" data-i18n="dh.d6.title">✈️ Arrival Day</div>
       </div>
-      <span class="day-badge badge-arrive">Arrival</span>
+      <span class="day-badge badge-arrive" data-i18n="dh.d6.badge">Arrival</span>
     </div>
     <div class="day-body">
       <div class="timetable">
@@ -315,7 +327,7 @@ footer{background:var(--dark);color:rgba(255,255,255,.4);text-align:center;paddi
           <div class="ttime">20:25</div>
           <div class="tdot"></div>
           <div class="tcontent">
-            <div class="t-title">Depart Košice — FR4766</div>
+            <div class="t-title" data-i18n="tr.d6.dep.title">Depart Košice — FR4766</div>
             <div class="t-desc">Ryanair flight. Check in online beforehand. Priority boarding recommended — overhead bin space fills quickly. <a href="flight.pdf" target="_blank" style="color:var(--secondary);font-weight:700;">📄 Itinerary</a></div>
           </div>
         </div>
@@ -323,7 +335,7 @@ footer{background:var(--dark);color:rgba(255,255,255,.4);text-align:center;paddi
           <div class="ttime">00:25</div>
           <div class="tdot primary"></div>
           <div class="tcontent">
-            <div class="t-title">Land Málaga Airport (AGP)</div>
+            <div class="t-title" data-i18n="tr.d6.land.title">Land Málaga Airport (AGP)</div>
             <div class="t-desc">Late night arrival. Immigration + baggage claim ~30 min. You have a <strong>free taxi from Booking.com</strong> — check your Booking.com confirmation email for how to activate/claim it before travel. This covers the transfer to the hotel (~20 min, normally €20–25).</div>
             <div class="t-chips">
               <span class="chip todo-done" style="font-size:11px;padding:3px 9px;">🚕 Free taxi via Booking.com</span>
@@ -335,7 +347,7 @@ footer{background:var(--dark);color:rgba(255,255,255,.4);text-align:center;paddi
           <div class="ttime">~01:30</div>
           <div class="tdot green"></div>
           <div class="tcontent">
-            <div class="t-title">Check in — Livensa Living Studios Feria</div>
+            <div class="t-title" data-i18n="tr.d6.checkin.title">Check in — Livensa Living Studios Feria</div>
             <div class="t-desc">C. Baliza 2, Cruz de Humilladero. Check-in 15:00–23:00 — you arrive after midnight so contact hotel in advance (special request already noted: "we will come 07.07.2026 around 1AM").</div>
             <div class="t-chips">
               <span class="chip cp">✅ Already paid · non-refundable</span>
@@ -346,7 +358,7 @@ footer{background:var(--dark);color:rgba(255,255,255,.4);text-align:center;paddi
         </div>
       </div>
       <div class="warn-box info">
-        <strong>ℹ️ Tonight is only about getting in safely</strong>
+        <strong data-i18n="tr.d6.info.title">ℹ️ Tonight is only about getting in safely</strong>
         Don't plan anything after landing. Rest — you have a full week ahead.
       </div>
     </div>
@@ -356,10 +368,10 @@ footer{background:var(--dark);color:rgba(255,255,255,.4);text-align:center;paddi
   <div class="day-section" id="d7" style="margin-bottom:20px;">
     <div class="day-header">
       <div>
-        <div class="day-date-label">Tuesday · 7 July</div>
-        <div class="day-title">💻 Work Day + Evening in Málaga</div>
+        <div class="day-date-label" data-i18n="dh.d7.date">Tuesday · 7 July</div>
+        <div class="day-title" data-i18n="dh.d7.title" data-i18n="dh.d8.title">💻 Work Day + Evening in Málaga</div>
       </div>
-      <span class="day-badge badge-work">Work · Free 16:00+</span>
+      <span class="day-badge badge-work" data-i18n="dh.d7.badge" data-i18n="dh.d7.badge">Work · Free 16:00+</span>
     </div>
     <div class="day-body">
       <div class="timetable">
@@ -367,7 +379,7 @@ footer{background:var(--dark);color:rgba(255,255,255,.4);text-align:center;paddi
           <div class="ttime">09:00</div>
           <div class="tdot"></div>
           <div class="tcontent">
-            <div class="t-title">Work from accommodation</div>
+            <div class="t-title" data-i18n="tr.d7.work.title">Work from accommodation</div>
             <div class="t-desc">Both rooms have kitchenette, desk, AC, WiFi. Work until 16:00. Grab a quick breakfast at Livensa or nearby café before starting.</div>
           </div>
         </div>
@@ -375,7 +387,7 @@ footer{background:var(--dark);color:rgba(255,255,255,.4);text-align:center;paddi
           <div class="ttime">16:00</div>
           <div class="tdot"></div>
           <div class="tcontent">
-            <div class="t-title">🚌 Bus to city centre</div>
+            <div class="t-title" data-i18n="tr.d7.bus.title" data-i18n="tr.d8.bus.title">🚌 Bus to city centre</div>
             <div class="t-desc">Line 35 from near Livensa to city centre ~20 min (plus waiting). The metro (L1/L2) is faster if you're near a station. Arrive at Alcazaba area by <strong>~16:45</strong>.</div>
           </div>
         </div>
@@ -383,7 +395,7 @@ footer{background:var(--dark);color:rgba(255,255,255,.4);text-align:center;paddi
           <div class="ttime">16:45</div>
           <div class="tdot primary"></div>
           <div class="tcontent">
-            <div class="t-title">🏯 Alcazaba de Málaga</div>
+            <div class="t-title" data-i18n="tr.d7.alc.title">🏯 Alcazaba de Málaga</div>
             <div class="t-desc">Open until 20:00. After 17:00 the tour groups leave and it's gloriously quiet. The 11th-century Moorish fortress has beautiful gardens, horseshoe arches, and stunning views. Buy the <strong>combined ticket</strong> with Gibralfaro Castle.</div>
             <div class="t-chips">
               <span class="chip cp">🎟️ Combined Alcazaba+Gibralfaro: €5.90</span>
@@ -396,7 +408,7 @@ footer{background:var(--dark);color:rgba(255,255,255,.4);text-align:center;paddi
           <div class="ttime">18:00</div>
           <div class="tdot green"></div>
           <div class="tcontent">
-            <div class="t-title">🏰 Castillo de Gibralfaro</div>
+            <div class="t-title" data-i18n="tr.d7.gib.title">🏰 Castillo de Gibralfaro</div>
             <div class="t-desc">Walk the shaded Coracha path (~20 min uphill) from the Alcazaba to the castle. Best panoramic view in Málaga: bullring, port, cathedral, and the Mediterranean. Evening light is spectacular. Same combined ticket.</div>
             <div class="t-chips"><span class="chip ct">⏱️ 20 min walk from Alcazaba</span></div>
           </div>
@@ -405,7 +417,7 @@ footer{background:var(--dark);color:rgba(255,255,255,.4);text-align:center;paddi
           <div class="ttime">19:30</div>
           <div class="tdot accent"></div>
           <div class="tcontent">
-            <div class="t-title">🍽️ Dinner in the historic centre</div>
+            <div class="t-title" data-i18n="tr.d7.dinner.title">🍽️ Dinner in the historic centre</div>
             <div class="t-desc">Descend to the old town. <strong>El Gastronauta</strong> (grill, €20–30) or <strong>Mesón Astur</strong> (Asturian cuisine, €20–30) — both excellent. Walk 2–3 streets inland from Muelle Uno for better prices and more authentic spots than the port-front restaurants.</div>
           </div>
         </div>
@@ -417,7 +429,7 @@ footer{background:var(--dark);color:rgba(255,255,255,.4);text-align:center;paddi
   <div class="day-section" id="d8" style="margin-bottom:20px;">
     <div class="day-header">
       <div>
-        <div class="day-date-label">Wednesday · 8 July</div>
+        <div class="day-date-label" data-i18n="dh.d8.date">Wednesday · 8 July</div>
         <div class="day-title">💻 Work Day + Evening in Málaga</div>
       </div>
       <span class="day-badge badge-work">Work · Free 16:00+</span>
@@ -428,7 +440,7 @@ footer{background:var(--dark);color:rgba(255,255,255,.4);text-align:center;paddi
           <div class="ttime">08:30</div>
           <div class="tdot"></div>
           <div class="tcontent">
-            <div class="t-title">Morning — Mercado de Atarazanas</div>
+            <div class="t-title" data-i18n="tr.d8.merc.title">Morning — Mercado de Atarazanas</div>
             <div class="t-desc">19th-century iron and glass market with stunning Moorish gateway. Buy local fruit, cheese, jamón for breakfast. Open Mon–Sat 8:00–14:00 — visit before heading to the apartment. Closed Sundays.</div>
             <div class="t-chips"><span class="chip cf">🆓 Free entry</span><span class="chip ct">⏰ 8:00–14:00 Mon–Sat</span></div>
           </div>
@@ -453,7 +465,7 @@ footer{background:var(--dark);color:rgba(255,255,255,.4);text-align:center;paddi
           <div class="ttime">16:45</div>
           <div class="tdot primary"></div>
           <div class="tcontent">
-            <div class="t-title">🎨 Museo Picasso Málaga</div>
+            <div class="t-title" data-i18n="tr.d8.picasso.title">🎨 Museo Picasso Málaga</div>
             <div class="t-desc">233 works spanning Picasso's entire career in the 16th-century Palacio de Buenavista. Book online — queues in July can be 45+ min without a ticket. <strong>Closed Mondays</strong> (13 July) — today is your best chance. If modern art isn't your thing, the <strong>Automobile Museum</strong> (Museo Automovilístico, open until 19:00) is a fun alternative with classic cars spanning 1898–2000.</div>
             <div class="t-chips">
               <span class="chip cp">🎟️ €13/adult · €26 for 2</span>
@@ -467,7 +479,7 @@ footer{background:var(--dark);color:rgba(255,255,255,.4);text-align:center;paddi
           <div class="ttime">18:00</div>
           <div class="tdot green"></div>
           <div class="tcontent">
-            <div class="t-title">⛪ Cathedral Exterior + Old Town Walk</div>
+            <div class="t-title" data-i18n="tr.d8.cath.title">⛪ Cathedral Exterior + Old Town Walk</div>
             <div class="t-desc">Cathedral closes at 18:30 (last entry 17:30 on weekdays) — do a quick visit or just admire the famous unfinished south tower (La Manquita). Then stroll Calle Larios, Plaza de la Constitución, and Plaza de la Merced (Picasso's birthplace square) in the golden evening light.</div>
             <div class="t-chips">
               <span class="chip cp">🎟️ Cathedral: €6 · Mon–Sat 10:00–18:30</span>
@@ -479,19 +491,19 @@ footer{background:var(--dark);color:rgba(255,255,255,.4);text-align:center;paddi
           <div class="ttime">19:30</div>
           <div class="tdot accent"></div>
           <div class="tcontent">
-            <div class="t-title">⚓ Muelle Uno + Dinner</div>
+            <div class="t-title" data-i18n="tr.d8.muelle.title">⚓ Muelle Uno + Dinner</div>
             <div class="t-desc">Walk the revitalised port waterfront — beautiful at night with the Alcazaba and Gibralfaro lit up. Muelle Uno restaurants are pricey though; walk 2–3 streets inland for better value tapas bars and a more local vibe. Reserve ahead for high-rated spots — they fill up fast in July.</div>
           </div>
         </div>
       </div>
 
       <hr style="border:none;border-top:1px solid var(--sand);margin:20px 0;">
-      <div class="section-label" style="margin-bottom:8px;">Málaga Evening Attraction Summary</div>
+      <div class="section-label" style="margin-bottom:8px;" data-i18n="sec.evening.label">Málaga Evening Attraction Summary</div>
       <div class="place-list">
         <div class="place-card">
           <div class="place-icon">🏯</div>
           <div class="place-info">
-            <div class="place-name">Alcazaba + Gibralfaro</div>
+            <div class="place-name" data-i18n="place.alc.name">Alcazaba + Gibralfaro</div>
             <div class="place-desc">Best after-work visit — open until 20:00, quiet after 17:00, spectacular sunset views. Combined ticket valid 2 days.</div>
             <div class="place-meta">
               <span class="chip cp">€5.90 combined</span>
@@ -503,7 +515,7 @@ footer{background:var(--dark);color:rgba(255,255,255,.4);text-align:center;paddi
         <div class="place-card">
           <div class="place-icon">🎨</div>
           <div class="place-info">
-            <div class="place-name">Museo Picasso Málaga</div>
+            <div class="place-name" data-i18n="place.picasso.name">Museo Picasso Málaga</div>
             <div class="place-desc">233 works, all periods. Book online. July closing time 20:00 — perfect for evenings.</div>
             <div class="place-meta">
               <span class="chip cp">€13/person</span>
@@ -515,7 +527,7 @@ footer{background:var(--dark);color:rgba(255,255,255,.4);text-align:center;paddi
         <div class="place-card">
           <div class="place-icon">⚓</div>
           <div class="place-info">
-            <div class="place-name">Muelle Uno</div>
+            <div class="place-name" data-i18n="place.muelle.name">Muelle Uno</div>
             <div class="place-desc">Waterfront promenade with views of the illuminated Alcazaba. Restaurants, bars, Centre Pompidou (Wed–Mon 9:30–20:00, ~€9).</div>
             <div class="place-meta">
               <span class="chip cf">Free to walk</span>
@@ -526,7 +538,7 @@ footer{background:var(--dark);color:rgba(255,255,255,.4);text-align:center;paddi
         <div class="place-card">
           <div class="place-icon">🏖️</div>
           <div class="place-info">
-            <div class="place-name">La Malagueta Beach</div>
+            <div class="place-name" data-i18n="place.malagueta.name">La Malagueta Beach</div>
             <div class="place-desc">City beach 20 min walk from centre. Sea temperature ~23°C in July. Evening swim + sunset — perfect after work.</div>
             <div class="place-meta">
               <span class="chip cf">Free</span>
@@ -537,7 +549,7 @@ footer{background:var(--dark);color:rgba(255,255,255,.4);text-align:center;paddi
         <div class="place-card">
           <div class="place-icon">🛁</div>
           <div class="place-info">
-            <div class="place-name">Hammam Al Ándalus</div>
+            <div class="place-name" data-i18n="place.hammam.name">Hammam Al Ándalus</div>
             <div class="place-desc">Arab baths experience. Open until 22:00. Thermal pools, steam room, optional massage. Great evening wind-down.</div>
             <div class="place-meta">
               <span class="chip cp">~€30/person (baths only)</span>
@@ -554,10 +566,10 @@ footer{background:var(--dark);color:rgba(255,255,255,.4);text-align:center;paddi
   <div class="day-section" id="d9" style="margin-bottom:20px;">
     <div class="day-header">
       <div>
-        <div class="day-date-label">Thursday · 9 July</div>
-        <div class="day-title">🌉 Check-out · Rent Car · Drive to Ronda</div>
+        <div class="day-date-label" data-i18n="dh.d9.date">Thursday · 9 July</div>
+        <div class="day-title" data-i18n="dh.d9.title">🌉 Check-out · Rent Car · Drive to Ronda</div>
       </div>
-      <span class="day-badge badge-road">Road Day</span>
+      <span class="day-badge badge-road" data-i18n="dh.d9.badge">Road Day</span>
     </div>
     <div class="day-body">
       <div class="warn-box">
@@ -570,7 +582,7 @@ footer{background:var(--dark);color:rgba(255,255,255,.4);text-align:center;paddi
           <div class="ttime">09:00</div>
           <div class="tdot"></div>
           <div class="tcontent">
-            <div class="t-title">Pack + last breakfast at Livensa</div>
+            <div class="t-title" data-i18n="tr.d9.pack.title">Pack + last breakfast at Livensa</div>
             <div class="t-desc">Use kitchenette or grab breakfast nearby. Check out by 12:00.</div>
           </div>
         </div>
@@ -578,7 +590,7 @@ footer{background:var(--dark);color:rgba(255,255,255,.4);text-align:center;paddi
           <div class="ttime">10:00</div>
           <div class="tdot primary"></div>
           <div class="tcontent">
-            <div class="t-title">🚗 Pick up rental car</div>
+            <div class="t-title" data-i18n="tr.d9.car.title">🚗 Pick up rental car</div>
             <div class="t-desc">Pick up at <strong>Málaga Airport (AGP)</strong> or a city-centre location. Return will be at AGP on 13 July before your flight. Take Cercanías C1 (12 min, €1.80) to airport if picking up there.</div>
             <div class="t-chips">
               <span class="chip ct">🔑 See Car Rental section below</span>
@@ -591,7 +603,7 @@ footer{background:var(--dark);color:rgba(255,255,255,.4);text-align:center;paddi
           <div class="ttime">12:00</div>
           <div class="tdot"></div>
           <div class="tcontent">
-            <div class="t-title">Check out of Livensa + depart Málaga</div>
+            <div class="t-title" data-i18n="tr.d9.checkout.title">Check out of Livensa + depart Málaga</div>
             <div class="t-desc">Drive to Ronda via <strong>A-357 → A-367</strong> through Ardales and Teba (~1h 30min). Scenic mountain route. If A-397 (Ronda–San Pedro) is open, you can use it instead — check rondatoday.com.</div>
             <div class="t-chips"><span class="chip ct">🚗 ~90 km · 1h 30min</span></div>
           </div>
@@ -600,7 +612,7 @@ footer{background:var(--dark);color:rgba(255,255,255,.4);text-align:center;paddi
           <div class="ttime">13:30</div>
           <div class="tdot green"></div>
           <div class="tcontent">
-            <div class="t-title">Arrive Ronda · Check in · Lunch</div>
+            <div class="t-title" data-i18n="tr.d9.arrive.title">Arrive Ronda · Check in · Lunch</div>
             <div class="t-desc">Check into hotel. Have lunch in the old town — try <em>rabo de toro</em> (oxtail stew), Ronda's signature dish. Ronda is 5–7°C cooler than the coast.</div>
           </div>
         </div>
@@ -608,7 +620,7 @@ footer{background:var(--dark);color:rgba(255,255,255,.4);text-align:center;paddi
           <div class="ttime">15:00</div>
           <div class="tdot primary"></div>
           <div class="tcontent">
-            <div class="t-title">🌉 Puente Nuevo + El Tajo Gorge</div>
+            <div class="t-title" data-i18n="tr.d9.puente.title">🌉 Puente Nuevo + El Tajo Gorge</div>
             <div class="t-desc">The 120m-deep gorge spanned by the 1793 stone bridge is Ronda's iconic landmark. Walk both sides of the gorge. Best view: descend to <strong>Jardines de Cuenca</strong> below the bridge via the path from Plaza María Auxiliadora — far more dramatic than looking from the top. The gorge itself is ideal for photography and short walks along the cliff edges.</div>
             <div class="t-chips">
               <span class="chip cf">🆓 Bridge + gorge: free</span>
@@ -621,7 +633,7 @@ footer{background:var(--dark);color:rgba(255,255,255,.4);text-align:center;paddi
           <div class="ttime">16:00</div>
           <div class="tdot green"></div>
           <div class="tcontent">
-            <div class="t-title">🏛️ Palacio de Mondragón</div>
+            <div class="t-title" data-i18n="tr.d9.palacio.title">🏛️ Palacio de Mondragón</div>
             <div class="t-desc">Former residence of the last Moorish king of Ronda, later received the Catholic Monarchs. Three courtyards in different architectural styles — Moorish mosaics, an impressive Mudéjar ceiling in the Noble Hall, and a museum tracing the region's history from cave dwellers to the Reconquista. The gorge-edge garden is a highlight with spectacular views over El Tajo. One of the best-value sights in Ronda.</div>
             <div class="t-chips">
               <span class="chip cp">🎟️ ~€4/person · free for EU citizens</span>
@@ -635,7 +647,7 @@ footer{background:var(--dark);color:rgba(255,255,255,.4);text-align:center;paddi
           <div class="ttime">17:30</div>
           <div class="tdot green"></div>
           <div class="tcontent">
-            <div class="t-title">🐂 Plaza de Toros</div>
+            <div class="t-title" data-i18n="tr.d9.toros.title">🐂 Plaza de Toros</div>
             <div class="t-desc">Spain's oldest and most prestigious bullring, built in 1785 — the birthplace of modern bullfighting as codified by Pedro Romero. The elegant neoclassical arena seats 5,000. The museum inside covers the history of the sport and the Romero dynasty. Views from inside the ring over the gorge are worth the entry even if bullfighting isn't your interest.</div>
             <div class="t-chips">
               <span class="chip cp">🎟️ €8/person · €16 for 2</span>
@@ -647,7 +659,7 @@ footer{background:var(--dark);color:rgba(255,255,255,.4);text-align:center;paddi
           <div class="ttime">19:00</div>
           <div class="tdot accent"></div>
           <div class="tcontent">
-            <div class="t-title">🕌 Arab Baths + La Ciudad stroll</div>
+            <div class="t-title" data-i18n="tr.d9.baths.title">🕌 Arab Baths + La Ciudad stroll</div>
             <div class="t-desc">Walk down to <strong>Baños Árabes</strong> — among the best-preserved Arab baths in Spain, tucked below the old town near the river. Then wander back through <strong>La Ciudad</strong>, the original Moorish medina: Minaret de San Sebastián, whitewashed lanes, and local squares. Time it for the golden-hour light.</div>
             <div class="t-chips">
               <span class="chip cp">Arab baths: €3</span>
@@ -659,17 +671,17 @@ footer{background:var(--dark);color:rgba(255,255,255,.4);text-align:center;paddi
           <div class="ttime">20:30</div>
           <div class="tdot accent"></div>
           <div class="tcontent">
-            <div class="t-title">🍷 Sunset viewpoint + Dinner</div>
+            <div class="t-title" data-i18n="tr.d9.sunset.title">🍷 Sunset viewpoint + Dinner</div>
             <div class="t-desc">Catch sunset from <strong>Mirador de Aldehuela</strong> or <strong>Balcón del Coño</strong> — both give spectacular views over the gorge turning orange. Then tapas dinner in the old town: order <em>rabo de toro</em> (oxtail stew) and local Serranía de Ronda wine.</div>
           </div>
         </div>
       </div>
 
       <hr style="border:none;border-top:1px solid var(--sand);margin:20px 0;">
-      <div class="section-label" style="margin-bottom:8px;">Ronda Hotel Recommendations (mid-range €80–130)</div>
+      <div class="section-label" style="margin-bottom:8px;" data-i18n="sec.rondahotels.label">Ronda Hotel Recommendations (mid-range €80–130)</div>
       <div class="hotel-grid">
         <div class="hotel-card">
-          <div class="hotel-name">🥇 Soho Boutique Palacio San Gabriel</div>
+          <div class="hotel-name" data-i18n="hotel.gabriel.name">🥇 Soho Boutique Palacio San Gabriel</div>
           <div class="hotel-desc">Historic 18th-century palace in the old town. 4-min walk to Puente Nuevo. Four-poster beds, antique character, excellent location. Best value in the category.</div>
           <div class="hotel-meta">
             <span class="chip cp">~€90–120/night</span>
@@ -677,7 +689,7 @@ footer{background:var(--dark);color:rgba(255,255,255,.4);text-align:center;paddi
           </div>
         </div>
         <div class="hotel-card">
-          <div class="hotel-name">🥈 Aire de Ronda</div>
+          <div class="hotel-name" data-i18n="hotel.aire.name">🥈 Aire de Ronda</div>
           <div class="hotel-desc">Only 4 rooms, intimate B&amp;B feel. Owner-run, exceptional breakfasts, immaculate. Books out fast — reserve well in advance.</div>
           <div class="hotel-meta">
             <span class="chip cp">~€85–110/night</span>
@@ -685,7 +697,7 @@ footer{background:var(--dark);color:rgba(255,255,255,.4);text-align:center;paddi
           </div>
         </div>
         <div class="hotel-card">
-          <div class="hotel-name">🥉 Hotel Catalonia Reina Victoria</div>
+          <div class="hotel-name" data-i18n="hotel.catalonia.name">🥉 Hotel Catalonia Reina Victoria</div>
           <div class="hotel-desc">Victorian-style villa perched above El Tajo gorge. Gorge-view terraces, pool, spa. 10-min walk to Puente Nuevo. Best views of any hotel in Ronda.</div>
           <div class="hotel-meta">
             <span class="chip cp">~€110–150/night</span>
@@ -695,7 +707,7 @@ footer{background:var(--dark);color:rgba(255,255,255,.4);text-align:center;paddi
       </div>
 
       <hr style="border:none;border-top:1px solid var(--sand);margin:20px 0;">
-      <div class="section-label" style="margin-bottom:8px;">Your Ronda Accommodation — Booked ✅</div>
+      <div class="section-label" style="margin-bottom:8px;" data-i18n="sec.rondabook.label">Your Ronda Accommodation — Booked ✅</div>
       <div class="warn-box info" style="margin-bottom:12px;">
         <strong>🏠 Apartamento Maicandil</strong>
         Comandante Salvador Carrasco 23, 3ºC · 29400 Ronda, Spain<br>
@@ -715,7 +727,7 @@ footer{background:var(--dark);color:rgba(255,255,255,.4);text-align:center;paddi
   <div class="day-section" id="d10" style="margin-bottom:20px;">
     <div class="day-header">
       <div>
-        <div class="day-date-label">Friday · 10 July</div>
+        <div class="day-date-label" data-i18n="dh.d10.date">Friday · 10 July</div>
         <div class="day-title">🛣️ Ronda → Málaga → Nerja + Caves & Cliffs</div>
       </div>
       <span class="day-badge badge-road">Road Day</span>
@@ -728,7 +740,7 @@ footer{background:var(--dark);color:rgba(255,255,255,.4);text-align:center;paddi
           <div class="ttime">09:00</div>
           <div class="tdot"></div>
           <div class="tcontent">
-            <div class="t-title">Breakfast in Ronda · Check out</div>
+            <div class="t-title" data-i18n="tr.d10.bfast.title">Breakfast in Ronda · Check out</div>
             <div class="t-desc">Check out of hotel (by 11:00). Quick coffee with gorge views before heading out. Parking on-site at Maicandil is reserved.</div>
           </div>
         </div>
@@ -736,7 +748,7 @@ footer{background:var(--dark);color:rgba(255,255,255,.4);text-align:center;paddi
           <div class="ttime">10:00</div>
           <div class="tdot primary"></div>
           <div class="tcontent">
-            <div class="t-title">🚗 Drive Ronda → Nerja (direct)</div>
+            <div class="t-title" data-i18n="tr.d10.drive1.title">🚗 Drive Ronda → Nerja (direct)</div>
             <div class="t-desc">Head east via A-357 through Ardales and Álora, then A-45 toward Málaga, picking up the A-7/AP-7 coastal highway to Nerja. ~140 km, ~1h 45min. No need to stop in Málaga — <strong>Flores apartment check-in is only from 16:00</strong>, so go straight to Nerja and check in on the way back this evening.</div>
             <div class="t-chips">
               <span class="chip ct">🚗 ~140 km · ~1h 45min</span>
@@ -748,7 +760,7 @@ footer{background:var(--dark);color:rgba(255,255,255,.4);text-align:center;paddi
           <div class="ttime">12:00</div>
           <div class="tdot green"></div>
           <div class="tcontent">
-            <div class="t-title">🌅 Arrive Nerja · Lunch</div>
+            <div class="t-title" data-i18n="tr.d10.nerja.title">🌅 Arrive Nerja · Lunch</div>
             <div class="t-desc">Grab lunch in Nerja town — plenty of good spots near the Balcón de Europa. Walk the clifftop promenade with 180° sea views before the cave visit.</div>
           </div>
         </div>
@@ -756,7 +768,7 @@ footer{background:var(--dark);color:rgba(255,255,255,.4);text-align:center;paddi
           <div class="ttime">14:00</div>
           <div class="tdot primary"></div>
           <div class="tcontent">
-            <div class="t-title">🦇 Cueva de Nerja</div>
+            <div class="t-title" data-i18n="tr.d10.cueva.title">🦇 Cueva de Nerja</div>
             <div class="t-desc">One of Spain's most spectacular cave systems, discovered in 1959 by boys chasing bats. The Sala de los Fantasmas features a 32m stalactite column—the world's largest. Constant 19°C inside—blissful in July heat. Guided tours take ~45 min. Book online at entradas.cuevadenerja.es to secure July slots.</div>
             <div class="t-chips">
               <span class="chip cp">🎟️ ~€15.50/person · €31 for 2</span>
@@ -769,7 +781,7 @@ footer{background:var(--dark);color:rgba(255,255,255,.4);text-align:center;paddi
           <div class="ttime">15:30</div>
           <div class="tdot green"></div>
           <div class="tcontent">
-            <div class="t-title">🌊 Balcón de Europa + Cliffs of Maro</div>
+            <div class="t-title" data-i18n="tr.d10.cliffs.title">🌊 Balcón de Europa + Cliffs of Maro</div>
             <div class="t-desc">Walk Nerja's iconic clifftop promenade jutting out over the Mediterranean—stunning 180° sea views. Then head east to <strong>Playa de Maro</strong>, a hidden cove below the protected Cliffs of Maro-Cerro Gordo nature reserve. Crystal-clear water for swimming, and the chiringuito serves fresh-caught fish. The limestone cliffs plunging into turquoise coves are among the most pristine coastlines left in Andalucía.</div>
             <div class="t-chips">
               <span class="chip cf">🆓 Balcón de Europa: free</span>
@@ -782,7 +794,7 @@ footer{background:var(--dark);color:rgba(255,255,255,.4);text-align:center;paddi
           <div class="ttime">18:30</div>
           <div class="tdot accent"></div>
           <div class="tcontent">
-            <div class="t-title">🚗 Drive Nerja → Flores apartment</div>
+            <div class="t-title" data-i18n="tr.d10.drive2.title">🚗 Drive Nerja → Flores apartment</div>
             <div class="t-desc">Drive back to Málaga (~50 min). Arrive at <strong>Flores</strong> (Calle Obispo Miguel Bucarelli, Ciudad Jardin) by ~19:30 — well within the 16:00–21:00 check-in window. Free public parking nearby. Unpack, settle in, and find dinner nearby.</div>
             <div class="t-chips">
               <span class="chip ct">🚗 50 min drive</span>
@@ -799,10 +811,10 @@ footer{background:var(--dark);color:rgba(255,255,255,.4);text-align:center;paddi
   <div class="day-section" id="d11" style="margin-bottom:20px;">
     <div class="day-header">
       <div>
-        <div class="day-date-label">Saturday · 11 July</div>
-        <div class="day-title">🌞 Free Day — Francisco or El Torcal</div>
+        <div class="day-date-label" data-i18n="dh.d11.date">Saturday · 11 July</div>
+        <div class="day-title" data-i18n="dh.d11.title">🌞 Free Day — Francisco or El Torcal</div>
       </div>
-      <span class="day-badge badge-free">To Be Confirmed</span>
+      <span class="day-badge badge-free" data-i18n="dh.d11.badge">To Be Confirmed</span>
     </div>
     <div class="day-body">
       <div class="warn-box info">
@@ -810,13 +822,13 @@ footer{background:var(--dark);color:rgba(255,255,255,.4);text-align:center;paddi
         One day you'll spend with your colleague Francisco, one day you want to go to El Torcal de Antequera. Assign when confirmed. Both options are detailed below.
       </div>
 
-      <div class="section-label" style="margin-bottom:8px;margin-top:16px;">Option A — Day with Francisco</div>
+      <div class="section-label" style="margin-bottom:8px;margin-top:16px;" data-i18n="d11.optA.label">Option A — Day with Francisco</div>
       <p style="font-size:13px;color:var(--muted);margin-bottom:12px;">Let Francisco lead — he's local and knows the city. Some suggestions you can bring up if needed:</p>
       <div class="place-list">
         <div class="place-card">
           <div class="place-icon">🏖️</div>
           <div class="place-info">
-            <div class="place-name">Beach + Chiringuito</div>
+            <div class="place-name" data-i18n="place.beach.name">Beach + Chiringuito</div>
             <div class="place-desc">La Malagueta city beach or take C1 train to Torremolinos/Fuengirola for a longer beach day. Lunch at a proper seafood chiringuito.</div>
             <div class="place-meta"><span class="chip cf">Free</span><span class="chip ct">C1 train to Torremolinos: 15 min · €1.80</span></div>
           </div>
@@ -824,7 +836,7 @@ footer{background:var(--dark);color:rgba(255,255,255,.4);text-align:center;paddi
         <div class="place-card">
           <div class="place-icon">🍷</div>
           <div class="place-info">
-            <div class="place-name">Food Tour / Tapas Bar Crawl</div>
+            <div class="place-name" data-i18n="place.tapas.name">Food Tour / Tapas Bar Crawl</div>
             <div class="place-desc">Ask Francisco for his favourite spots. El Pimpi wine bar near the Alcazaba is Málaga's most famous. Pair with a walk through the historic centre.</div>
             <div class="place-meta"><span class="chip cp">Tapas from €2–4 each</span></div>
           </div>
@@ -832,21 +844,21 @@ footer{background:var(--dark);color:rgba(255,255,255,.4);text-align:center;paddi
         <div class="place-card">
           <div class="place-icon">🏛️</div>
           <div class="place-info">
-            <div class="place-name">Soho District + Street Art</div>
+            <div class="place-name" data-i18n="place.soho.name">Soho District + Street Art</div>
             <div class="place-desc">Málaga's creative neighbourhood south of Alameda Principal — colourful murals, galleries, Museo de Arte Urbano. Very local feel, not touristy.</div>
             <div class="place-meta"><span class="chip cf">Free to explore</span></div>
           </div>
         </div>
       </div>
 
-      <div class="section-label" style="margin-bottom:8px;margin-top:24px;">Option B — El Torcal de Antequera</div>
+      <div class="section-label" style="margin-bottom:8px;margin-top:24px;" data-i18n="d11.optB.label">Option B — El Torcal de Antequera</div>
       <p style="font-size:13px;color:var(--muted);margin-bottom:12px;">Best done early — start by 09:00 to avoid midday July heat on the exposed limestone.</p>
       <div class="timetable">
         <div class="trow">
           <div class="ttime">08:30</div>
           <div class="tdot"></div>
           <div class="tcontent">
-            <div class="t-title">Depart Málaga by car</div>
+            <div class="t-title" data-i18n="tr.d11.depart.title">Depart Málaga by car</div>
             <div class="t-desc">Drive A-45 toward Granada, exit Casabermeja, then A-3404 toward Villanueva de la Concepción and up to El Torcal. ~50 km, ~55 min.</div>
             <div class="t-chips"><span class="chip ct">🚗 50 km · ~55 min · Toll ~€5 one-way</span></div>
           </div>
@@ -855,7 +867,7 @@ footer{background:var(--dark);color:rgba(255,255,255,.4);text-align:center;paddi
           <div class="ttime">09:30</div>
           <div class="tdot primary"></div>
           <div class="tcontent">
-            <div class="t-title">🪨 El Torcal de Antequera</div>
+            <div class="t-title" data-i18n="tr.d11.torcal.title">🪨 El Torcal de Antequera</div>
             <div class="t-desc">A surreal Jurassic limestone landscape sculpted over 150 million years. Towers, labyrinths, and geological formations that look like another planet. Three hiking routes: <strong>Ruta Verde</strong> (easy, 45 min loop), <strong>Ruta Amarilla</strong> (moderate, 2.5h), Ruta Naranja (harder). Start early before 10:00 — no shade in July. Bring 1.5L water per person. Park at the Interpretation Centre (free parking). On weekends, arrive early or the shuttle bus operates from roadside parking.</div>
             <div class="t-chips">
               <span class="chip cf">🆓 Park entry: FREE</span>
@@ -868,7 +880,7 @@ footer{background:var(--dark);color:rgba(255,255,255,.4);text-align:center;paddi
           <div class="ttime">12:00</div>
           <div class="tdot green"></div>
           <div class="tcontent">
-            <div class="t-title">Return to Málaga · Optional Antequera stop</div>
+            <div class="t-title" data-i18n="tr.d11.return.title">Return to Málaga · Optional Antequera stop</div>
             <div class="t-desc">On the way back, consider a quick stop in <strong>Antequera town</strong> (~15 min from El Torcal) to see the famous <strong>Dolmens</strong> (UNESCO, free) and the pretty Casco Antiguo. Back in Málaga for lunch or early afternoon.</div>
           </div>
         </div>
@@ -880,8 +892,8 @@ footer{background:var(--dark);color:rgba(255,255,255,.4);text-align:center;paddi
   <div class="day-section" id="d12" style="margin-bottom:20px;">
     <div class="day-header">
       <div>
-        <div class="day-date-label">Sunday · 12 July</div>
-        <div class="day-title">🌞 Free Day — Francisco or El Torcal (whichever wasn't 11 Jul)</div>
+        <div class="day-date-label" data-i18n="dh.d12.date">Sunday · 12 July</div>
+        <div class="day-title" data-i18n="dh.d12.title">🌞 Free Day — Francisco or El Torcal (whichever wasn't 11 Jul)</div>
       </div>
       <span class="day-badge badge-free">To Be Confirmed</span>
     </div>
@@ -895,7 +907,7 @@ footer{background:var(--dark);color:rgba(255,255,255,.4);text-align:center;paddi
         <div class="place-card">
           <div class="place-icon">🏯</div>
           <div class="place-info">
-            <div class="place-name">Alcazaba + Gibralfaro — FREE on Sunday</div>
+            <div class="place-name" data-i18n="place.alc2.name">Alcazaba + Gibralfaro — FREE on Sunday</div>
             <div class="place-desc">EU citizens get free entry after 14:00 on Sundays. If you haven't visited yet, today is the ideal day.</div>
             <div class="place-meta"><span class="chip cf">🆓 Free after 14:00 (EU passport)</span><span class="chip ct">Open until 20:00</span></div>
           </div>
@@ -903,7 +915,7 @@ footer{background:var(--dark);color:rgba(255,255,255,.4);text-align:center;paddi
         <div class="place-card">
           <div class="place-icon">🎨</div>
           <div class="place-info">
-            <div class="place-name">Picasso Museum — last chance (closes Mon)</div>
+            <div class="place-name" data-i18n="place.picasso2.name">Picasso Museum — last chance (closes Mon)</div>
             <div class="place-desc">Tomorrow (Monday) the museum is CLOSED. If you haven't visited yet, Sunday is your final opportunity.</div>
             <div class="place-meta"><span class="chip cp">€13/person</span><span class="chip cw">Last chance before Monday closure</span></div>
           </div>
@@ -916,10 +928,10 @@ footer{background:var(--dark);color:rgba(255,255,255,.4);text-align:center;paddi
   <div class="day-section" id="d13" style="margin-bottom:20px;">
     <div class="day-header">
       <div>
-        <div class="day-date-label">Monday · 13 July</div>
-        <div class="day-title">✈️ Departure Day</div>
+        <div class="day-date-label" data-i18n="dh.d13.date">Monday · 13 July</div>
+        <div class="day-title" data-i18n="dh.d13.title">✈️ Departure Day</div>
       </div>
-      <span class="day-badge badge-depart">Departure</span>
+      <span class="day-badge badge-depart" data-i18n="dh.d13.badge">Departure</span>
     </div>
     <div class="day-body">
       <div class="timetable">
@@ -927,7 +939,7 @@ footer{background:var(--dark);color:rgba(255,255,255,.4);text-align:center;paddi
           <div class="ttime">09:00</div>
           <div class="tdot"></div>
           <div class="tcontent">
-            <div class="t-title">Morning free — light activity only</div>
+            <div class="t-title" data-i18n="tr.d13.morning.title">Morning free — light activity only</div>
             <div class="t-desc">Quick walk through the historic centre or a coffee on Calle Larios. Note: Picasso Museum and Mercado Atarazanas are both <strong>CLOSED on Mondays</strong>.</div>
           </div>
         </div>
@@ -935,7 +947,7 @@ footer{background:var(--dark);color:rgba(255,255,255,.4);text-align:center;paddi
           <div class="ttime">12:00</div>
           <div class="tdot primary"></div>
           <div class="tcontent">
-            <div class="t-title">Check out of Flores · Load car</div>
+            <div class="t-title" data-i18n="tr.d13.checkout.title">Check out of Flores · Load car</div>
             <div class="t-desc">Pack and check out of Flores (Ciudad Jardin). Load rental car. Fill the tank before returning to airport if required by rental company. Checkout deadline: midnight (00:00) — plenty of time.</div>
           </div>
         </div>
@@ -943,7 +955,7 @@ footer{background:var(--dark);color:rgba(255,255,255,.4);text-align:center;paddi
           <div class="ttime">12:30</div>
           <div class="tdot primary"></div>
           <div class="tcontent">
-            <div class="t-title">🚗 Return rental car at AGP Airport</div>
+            <div class="t-title" data-i18n="tr.d13.carreturn.title">🚗 Return rental car at AGP Airport</div>
             <div class="t-desc">Drive to Málaga Airport (~20 min from city). Return car at the rental desk — allow 20–30 min for the return process. Check the car is clean and undamaged before handing keys. Keep your damage photo evidence ready.</div>
             <div class="t-chips"><span class="chip cw">⏱️ Allow 30 min for return process</span></div>
           </div>
@@ -952,7 +964,7 @@ footer{background:var(--dark);color:rgba(255,255,255,.4);text-align:center;paddi
           <div class="ttime">13:30</div>
           <div class="tdot green"></div>
           <div class="tcontent">
-            <div class="t-title">Airport check-in + security</div>
+            <div class="t-title" data-i18n="tr.d13.security.title">Airport check-in + security</div>
             <div class="t-desc">Ryanair recommends checking in at least 2h before departure. Online check-in must be completed beforehand. Gate closes 30 min before departure.</div>
           </div>
         </div>
@@ -960,7 +972,7 @@ footer{background:var(--dark);color:rgba(255,255,255,.4);text-align:center;paddi
           <div class="ttime">16:00</div>
           <div class="tdot accent"></div>
           <div class="tcontent">
-            <div class="t-title">✈️ Depart Málaga — FR4765</div>
+            <div class="t-title" data-i18n="tr.d13.depart.title">✈️ Depart Málaga — FR4765</div>
             <div class="t-desc">Flight to Košice. Arrival 19:40.</div>
           </div>
         </div>
@@ -970,39 +982,39 @@ footer{background:var(--dark);color:rgba(255,255,255,.4);text-align:center;paddi
 
   <!-- ======================== PUBLIC TRANSPORT ======================== -->
   <hr class="divider">
-  <div id="sec-transport" class="section-label">Getting Around</div>
-  <h2 class="section-title">Public Transport in Málaga</h2>
+  <div id="sec-transport" class="section-label" data-i18n="sec.transport.label">Getting Around</div>
+  <h2 class="section-title" data-i18n="sec.transport.title">Public Transport in Málaga</h2>
   <p class="section-sub">Use for all city and evening trips (7–10 July before car, and 11–13 July after returning it).</p>
 
   <div class="tips-grid">
     <div class="tip-card">
       <div class="tip-icon">🎫</div>
-      <div class="tip-title">Get the Metro Card</div>
+      <div class="tip-title" data-i18n="tip.metro.title">Get the Metro Card</div>
       <div class="tip-text">Buy a rechargeable metro card from any station's automatic machine (€2 card + credit). The metro (L1/L2) is 3–4x faster than buses and runs frequently. Far preferable to buses for most trips.</div>
     </div>
     <div class="tip-card">
       <div class="tip-icon">🚂</div>
-      <div class="tip-title">Cercanías C1 for Airport</div>
+      <div class="tip-title" data-i18n="tip.c1.title">Cercanías C1 for Airport</div>
       <div class="tip-text">Train from AGP Airport to Centro-Alameda: 12 min, €1.80. Runs every 20–30 min from early morning to midnight. Tap contactless card at barrier — no ticket machine needed.</div>
     </div>
     <div class="tip-card">
       <div class="tip-icon">🚌</div>
-      <div class="tip-title">Bus as Backup (Slower)</div>
+      <div class="tip-title" data-i18n="tip.bus.title">Bus as Backup (Slower)</div>
       <div class="tip-text">Bus is 3–4x slower than metro and waiting times add up. Use only when metro doesn't cover your route. Lines: 35 → Livensa area. 16 → near Gibralfaro. 3 + 11 → La Malagueta. Google Maps works for both.</div>
     </div>
     <div class="tip-card">
       <div class="tip-icon">🗺️</div>
-      <div class="tip-title">The City is Walkable</div>
+      <div class="tip-title" data-i18n="tip.walk.title">The City is Walkable</div>
       <div class="tip-text">Alcazaba, Picasso Museum, Cathedral, Muelle Uno, and Calle Larios are all within 15 min walk of each other. Evening visits: walk from the centre, bus back if tired.</div>
     </div>
     <div class="tip-card">
       <div class="tip-icon">📱</div>
-      <div class="tip-title">EMT Málaga App</div>
+      <div class="tip-title" data-i18n="tip.emt.title">EMT Málaga App</div>
       <div class="tip-text">Real-time bus arrivals at every stop, journey planner, favourite stops. Also fully integrated in Google Maps. Download before arriving.</div>
     </div>
     <div class="tip-card">
       <div class="tip-icon">🧍</div>
-      <div class="tip-title">Queue Culture</div>
+      <div class="tip-title" data-i18n="tip.queue.title">Queue Culture</div>
       <div class="tip-text">Málaga locals take bus queuing seriously. Always ask "¿quién es el último?" (who is last?). Front door entry only. Drivers don't give change for notes larger than €5.</div>
     </div>
   </div>
@@ -1029,7 +1041,7 @@ footer{background:var(--dark);color:rgba(255,255,255,.4);text-align:center;paddi
   <!-- ======================== CAR RENTAL ======================== -->
   <hr class="divider">
   <div id="sec-car" class="section-label">Car Rental</div>
-  <h2 class="section-title">Rental Car — Málaga Airport</h2>
+  <h2 class="section-title" data-i18n="sec.car.title">Rental Car — Málaga Airport</h2>
   <p class="section-sub">Pick up 9 July morning, return 13 July at AGP before your flight. 4 days total. Small car is ideal for 2 people — easy to park in Ronda's narrow streets.</p>
 
   <!-- PRICE TABLE -->
@@ -1109,32 +1121,32 @@ footer{background:var(--dark);color:rgba(255,255,255,.4);text-align:center;paddi
   <div class="tips-grid">
     <div class="tip-card">
       <div class="tip-icon">⭐</div>
-      <div class="tip-title">Best pick for you: Seat Ibiza</div>
+      <div class="tip-title" data-i18n="tip.car.ibiza.title">Best pick for you: Seat Ibiza</div>
       <div class="tip-text">5-door, 2 large bags, comfortable for long drives. More practical than Fiat 500 (only 3 doors, 1 bag). Book Economy class and you'll likely get an Ibiza or similar.</div>
     </div>
     <div class="tip-card">
       <div class="tip-icon">🔍</div>
-      <div class="tip-title">Where to compare</div>
+      <div class="tip-title" data-i18n="tip.car.compare.title">Where to compare</div>
       <div class="tip-text"><strong>DiscoverCars.com</strong> shows all-in prices with insurance included. <strong>MalagaCar.com</strong> is the local specialist. Compare both — same car can differ by €30–50 total.</div>
     </div>
     <div class="tip-card">
       <div class="tip-icon">🚗</div>
-      <div class="tip-title">Manual vs automatic</div>
+      <div class="tip-title" data-i18n="tip.car.manual.title">Manual vs automatic</div>
       <div class="tip-text">Almost all cheap cars in Spain are manual. Automatics cost 30–50% more and sell out in July. Book automatic explicitly and early if needed.</div>
     </div>
     <div class="tip-card">
       <div class="tip-icon">💳</div>
-      <div class="tip-title">Credit card deposit</div>
+      <div class="tip-title" data-i18n="tip.car.credit.title">Credit card deposit</div>
       <div class="tip-text">A credit card (not debit) is required — typically €500–1,500 blocked. Released within 5–10 days of return. Exception: Marbesol requires no deposit at all.</div>
     </div>
     <div class="tip-card">
       <div class="tip-icon">📸</div>
-      <div class="tip-title">Photo every panel at pickup</div>
+      <div class="tip-title" data-i18n="tip.car.photo.title">Photo every panel at pickup</div>
       <div class="tip-text">Before driving away, photograph every panel, wheel arch, windscreen, and interior — timestamped. Walk with the agent. This is your protection against false damage claims at drop-off.</div>
     </div>
     <div class="tip-card">
       <div class="tip-icon">⛽</div>
-      <div class="tip-title">Fuel policy</div>
+      <div class="tip-title" data-i18n="tip.car.fuel.title">Fuel policy</div>
       <div class="tip-text">Always choose "full-to-full" — pick up full, return full. Avoid "full-to-empty" where you prepay fuel at inflated rates. Fill the tank yourself at a petrol station near the airport before return.</div>
     </div>
   </div>
@@ -1142,7 +1154,7 @@ footer{background:var(--dark);color:rgba(255,255,255,.4);text-align:center;paddi
   <!-- ======================== WISHLIST ======================== -->
   <hr class="divider">
   <div id="sec-wishlist" class="section-label">Wishlist</div>
-  <h2 class="section-title">On the Radar — If Time Allows</h2>
+  <h2 class="section-title" data-i18n="sec.wish.title">On the Radar — If Time Allows</h2>
   <p class="section-sub">These didn't make the main plan but could be worth detours on the drive back from Ronda to Málaga.</p>
 
   <p style="font-size:13px;color:var(--muted);line-height:1.5;margin-bottom:8px;">Nerja and the Cliffs of Maro are now part of the main 10 July plan (see above). Still worth considering:</p>
@@ -1169,14 +1181,14 @@ footer{background:var(--dark);color:rgba(255,255,255,.4);text-align:center;paddi
   <!-- ======================== COST SUMMARY ======================== -->
   <hr class="divider">
   <div id="sec-budget" class="section-label">Budget</div>
-  <h2 class="section-title">What We've Already Paid</h2>
+  <h2 class="section-title" data-i18n="sec.budget.title">What We've Already Paid</h2>
   <p class="section-sub">Pre-paid bookings only. Car rental, activities, food and transport estimated separately.</p>
 
   <table style="width:100%;border-collapse:collapse;font-size:13px;background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 2px 16px rgba(0,0,0,.06);">
     <thead>
       <tr style="background:var(--secondary);color:#fff;">
         <th style="text-align:left;padding:11px 16px;font-weight:600;">Item</th>
-        <th style="text-align:left;padding:11px 16px;font-weight:600;">Details</th>
+        <th style="text-align:left;padding:11px 16px;font-weight:600;" data-i18n="todo.col.details">Details</th>
         <th style="text-align:right;padding:11px 16px;font-weight:600;">Total</th>
         <th style="text-align:right;padding:11px 16px;font-weight:600;">Per person</th>
       </tr>
@@ -1221,18 +1233,18 @@ footer{background:var(--dark);color:rgba(255,255,255,.4);text-align:center;paddi
 
   <!-- ======================== TODO ======================== -->
   <hr class="divider">
-  <div id="sec-todo" class="section-label">Checklist</div>
-  <h2 class="section-title">To-Do Before the Trip</h2>
+  <div id="sec-todo" class="section-label" data-i18n="sec.todo.label">Checklist</div>
+  <h2 class="section-title" data-i18n="sec.todo.title">To-Do Before the Trip</h2>
   <p class="section-sub">Track what's done and what still needs booking.</p>
 
   <table class="todo-table">
     <thead>
       <tr>
         <th style="width:30px;">#</th>
-        <th style="width:90px;">Priority</th>
-        <th>Task</th>
+        <th style="width:90px;" data-i18n="todo.col.priority">Priority</th>
+        <th data-i18n="todo.col.task">Task</th>
         <th>Details</th>
-        <th style="width:110px;">Status</th>
+        <th style="width:110px;" data-i18n="todo.col.status">Status</th>
       </tr>
     </thead>
     <tbody>
@@ -1322,7 +1334,7 @@ footer{background:var(--dark);color:rgba(255,255,255,.4);text-align:center;paddi
 </div><!-- .wrap -->
 
 <footer>
-  Created with Claude AI · Prices are 2025–2026 estimates · Transport times are normal-condition estimates · Map data © OpenStreetMap contributors · Generated: 07-06-2026T19-30
+  <span data-i18n="footer.text">Created with Claude AI · Prices are 2025–2026 estimates · Transport times are normal-condition estimates · Map data © OpenStreetMap contributors · Generated: 07-06-2026T19-30</span>
 </footer>
 
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
@@ -1441,6 +1453,386 @@ window.addEventListener('load', function() {
     L.marker([p[0],p[1]],{icon:mkIcon(p[2],p[3])})
       .addTo(map)
       .bindPopup('<strong style="font-size:13px;">'+p[4]+'</strong><br><span style="font-size:12px;color:#555;line-height:1.5;">'+p[5]+'</span>',{maxWidth:260});
+  });
+});
+</script>
+
+<script>
+// ============================================================
+// TRANSLATIONS
+// ============================================================
+const translations = {
+  en: {
+    // Hero
+    "hero.tag": "🇪🇸 Andalucía · July 2026",
+    "hero.title1": "Málaga &",
+    "hero.title2": "The South",
+    "hero.sub": "7 nights · 2 people · Public transport in Málaga · Rental car for road trips · Ronda overnight included",
+    "pill.nights": "7 nights",
+    "pill.flight": "Ryanair · Košice ↔ Málaga",
+    "pill.work": "Remote work · free after 16:00",
+    "pill.ronda": "Check-out · rent car · Ronda",
+    // Overview
+    "overview.label": "Trip Overview",
+    "overview.title": "8 Days at a Glance",
+    "overview.sub": "Click a day to jump to its plan below.",
+    // Timeline
+    "tl.d6.date": "Mon 6 Jul", "tl.d6.place": "Arrive\nMálaga", "tl.d6.note": "land 00:25",
+    "tl.d7.date": "Tue 7 Jul", "tl.d7.place": "Work +\nEvening", "tl.d7.note": "free 16:00+",
+    "tl.d8.date": "Wed 8 Jul", "tl.d8.place": "Work +\nEvening",
+    "tl.d9.date": "Thu 9 Jul", "tl.d9.place": "Ronda", "tl.d9.note": "checkout · car · Ronda ✅",
+    "tl.d10.date": "Fri 10 Jul", "tl.d10.place": "South\nRoute", "tl.d10.note": "→ Málaga",
+    "tl.d11.date": "Sat 11 Jul", "tl.d11.place": "Málaga",
+    "tl.d12.date": "Sun 12 Jul", "tl.d12.place": "Torcal /\nMálaga",
+    "tl.d13.date": "Mon 13 Jul", "tl.d13.place": "Depart", "tl.d13.note": "flight 16:00",
+    // TOC
+    "toc.title": "Contents",
+    // Map
+    "map.label": "Map", "map.title": "All Locations",
+    "map.sub": "City spots, road-trip stops, day trips and wishlist destinations.",
+    "map.leg1": "Fixed (airport · all accommodations)",
+    "map.leg2": "Málaga city", "map.leg3": "Road trip stops", "map.leg4": "Wishlist",
+    // Daily plans
+    "days.label": "Daily Plans", "days.title": "Day by Day",
+    // Day headers
+    "dh.d6.date": "Monday · 6 July", "dh.d6.title": "✈️ Arrival Day", "dh.d6.badge": "Arrival",
+    "dh.d7.date": "Tuesday · 7 July", "dh.d7.title": "💻 Work Day + Evening in Málaga", "dh.d7.badge": "Work · Free 16:00+",
+    "dh.d8.date": "Wednesday · 8 July", "dh.d8.title": "💻 Work Day + Evening in Málaga",
+    "dh.d9.date": "Thursday · 9 July", "dh.d9.title": "🌉 Check-out · Rent Car · Drive to Ronda", "dh.d9.badge": "Road Day",
+    "dh.d10.date": "Friday · 10 July", "dh.d10.title": "🛣️ Ronda → Málaga → Nerja + Caves & Cliffs",
+    "dh.d11.date": "Saturday · 11 July", "dh.d11.title": "🌞 Free Day — Francisco or El Torcal", "dh.d11.badge": "To Be Confirmed",
+    "dh.d12.date": "Sunday · 12 July", "dh.d12.title": "🌞 Free Day — Francisco or El Torcal (whichever wasn't 11 Jul)",
+    "dh.d13.date": "Monday · 13 July", "dh.d13.title": "✈️ Departure Day", "dh.d13.badge": "Departure",
+    // Timetable titles - Day 6
+    "tr.d6.dep.title": "Depart Košice — FR4766",
+    "tr.d6.land.title": "Land Málaga Airport (AGP)",
+    "tr.d6.checkin.title": "Check in — Livensa Living Studios Feria",
+    "tr.d6.info.title": "ℹ️ Tonight is only about getting in safely",
+    // Day 7
+    "tr.d7.work.title": "Work from accommodation",
+    "tr.d7.bus.title": "🚌 Bus to city centre",
+    "tr.d7.alc.title": "🏯 Alcazaba de Málaga",
+    "tr.d7.gib.title": "🏰 Castillo de Gibralfaro",
+    "tr.d7.dinner.title": "🍽️ Dinner in the historic centre",
+    // Day 8
+    "tr.d8.merc.title": "Morning — Mercado de Atarazanas",
+    "tr.d8.bus.title": "🚌 Bus to city centre",
+    "tr.d8.picasso.title": "🎨 Museo Picasso Málaga",
+    "tr.d8.cath.title": "⛪ Cathedral Exterior + Old Town Walk",
+    "tr.d8.muelle.title": "⚓ Muelle Uno + Dinner",
+    // Day 9
+    "tr.d9.pack.title": "Pack + last breakfast at Livensa",
+    "tr.d9.car.title": "🚗 Pick up rental car",
+    "tr.d9.checkout.title": "Check out of Livensa + depart Málaga",
+    "tr.d9.arrive.title": "Arrive Ronda · Check in · Lunch",
+    "tr.d9.puente.title": "🌉 Puente Nuevo + El Tajo Gorge",
+    "tr.d9.palacio.title": "🏛️ Palacio de Mondragón",
+    "tr.d9.toros.title": "🐂 Plaza de Toros",
+    "tr.d9.baths.title": "🕌 Arab Baths + La Ciudad stroll",
+    "tr.d9.sunset.title": "🍷 Sunset viewpoint + Dinner",
+    // Day 10
+    "tr.d10.bfast.title": "Breakfast in Ronda · Check out",
+    "tr.d10.drive1.title": "🚗 Drive Ronda → Nerja (direct)",
+    "tr.d10.nerja.title": "🌅 Arrive Nerja · Lunch",
+    "tr.d10.cueva.title": "🦇 Cueva de Nerja",
+    "tr.d10.cliffs.title": "🌊 Balcón de Europa + Cliffs of Maro",
+    "tr.d10.drive2.title": "🚗 Drive Nerja → Flores apartment",
+    // Day 11
+    "d11.optA.label": "Option A — Day with Francisco",
+    "d11.optB.label": "Option B — El Torcal de Antequera",
+    "tr.d11.depart.title": "Depart Málaga by car",
+    "tr.d11.torcal.title": "🪨 El Torcal de Antequera",
+    "tr.d11.return.title": "Return to Málaga · Optional Antequera stop",
+    // Day 13
+    "tr.d13.morning.title": "Morning free — light activity only",
+    "tr.d13.checkout.title": "Check out of Flores · Load car",
+    "tr.d13.carreturn.title": "🚗 Return rental car at AGP Airport",
+    "tr.d13.security.title": "Airport check-in + security",
+    "tr.d13.depart.title": "✈️ Depart Málaga — FR4765",
+    // Sections
+    "sec.transport.label": "Getting Around", "sec.transport.title": "Public Transport in Málaga",
+    "sec.car.label": "Car Rental", "sec.car.title": "Rental Car — Málaga Airport",
+    "sec.wish.label": "Wishlist", "sec.wish.title": "On the Radar — If Time Allows",
+    "sec.budget.label": "Budget", "sec.budget.title": "What We've Already Paid",
+    "sec.todo.label": "Checklist", "sec.todo.title": "To-Do Before the Trip",
+    "sec.evening.label": "Málaga Evening Attraction Summary",
+    "sec.rondahotels.label": "Ronda Hotel Recommendations (mid-range €80–130)",
+    "sec.rondabook.label": "Your Ronda Accommodation — Booked ✅",
+    // Tips - transport
+    "tip.metro.title": "Get the Metro Card", "tip.c1.title": "Cercanías C1 for Airport",
+    "tip.bus.title": "Bus as Backup (Slower)", "tip.walk.title": "The City is Walkable",
+    "tip.emt.title": "EMT Málaga App", "tip.queue.title": "Queue Culture",
+    // Tips - car
+    "tip.car.ibiza.title": "Best pick for you: Seat Ibiza",
+    "tip.car.compare.title": "Where to compare", "tip.car.manual.title": "Manual vs automatic",
+    "tip.car.credit.title": "Credit card deposit", "tip.car.photo.title": "Photo every panel at pickup",
+    "tip.car.fuel.title": "Fuel policy",
+    // Places
+    "place.alc.name": "Alcazaba + Gibralfaro", "place.picasso.name": "Museo Picasso Málaga",
+    "place.muelle.name": "Muelle Uno", "place.malagueta.name": "La Malagueta Beach",
+    "place.hammam.name": "Hammam Al Ándalus", "place.beach.name": "Beach + Chiringuito",
+    "place.tapas.name": "Food Tour / Tapas Bar Crawl", "place.soho.name": "Soho District + Street Art",
+    "place.alc2.name": "Alcazaba + Gibralfaro — FREE on Sunday",
+    "place.picasso2.name": "Picasso Museum — last chance (closes Mon)",
+    // Hotels
+    "hotel.gabriel.name": "🥇 Soho Boutique Palacio San Gabriel",
+    "hotel.aire.name": "🥈 Aire de Ronda", "hotel.catalonia.name": "🥉 Hotel Catalonia Reina Victoria",
+    // Todo table
+    "todo.col.priority": "Priority", "todo.col.task": "Task",
+    "todo.col.details": "Details", "todo.col.status": "Status",
+    // Footer
+    "footer.text": "Created with Claude AI · Prices are 2025–2026 estimates · Transport times are normal-condition estimates · Map data © OpenStreetMap contributors · Generated: 07-06-2026T19-30"
+  },
+  es: {
+    "hero.tag": "🇪🇸 Andalucía · Julio 2026",
+    "hero.title1": "Málaga &",
+    "hero.title2": "El Sur",
+    "hero.sub": "7 noches · 2 personas · Transporte público en Málaga · Coche de alquiler para excursiones · Noche en Ronda incluida",
+    "pill.nights": "7 noches",
+    "pill.flight": "Ryanair · Košice ↔ Málaga",
+    "pill.work": "Trabajo remoto · libre desde las 16:00",
+    "pill.ronda": "Check-out · alquilar coche · Ronda",
+    "overview.label": "Resumen del viaje",
+    "overview.title": "8 días de un vistazo",
+    "overview.sub": "Haz clic en un día para ir a su plan.",
+    "tl.d6.date": "Lun 6 Jul", "tl.d6.place": "Llegar a
+Málaga", "tl.d6.note": "aterrizaje 00:25",
+    "tl.d7.date": "Mar 7 Jul", "tl.d7.place": "Trabajo +
+Tarde", "tl.d7.note": "libre 16:00+",
+    "tl.d8.date": "Mié 8 Jul", "tl.d8.place": "Trabajo +
+Tarde",
+    "tl.d9.date": "Jue 9 Jul", "tl.d9.place": "Ronda", "tl.d9.note": "salida · coche · Ronda ✅",
+    "tl.d10.date": "Vie 10 Jul", "tl.d10.place": "Ruta
+Sur", "tl.d10.note": "→ Málaga",
+    "tl.d11.date": "Sáb 11 Jul", "tl.d11.place": "Málaga",
+    "tl.d12.date": "Dom 12 Jul", "tl.d12.place": "Torcal /
+Málaga",
+    "tl.d13.date": "Lun 13 Jul", "tl.d13.place": "Salida", "tl.d13.note": "vuelo 16:00",
+    "toc.title": "Contenido",
+    "map.label": "Mapa", "map.title": "Todos los lugares",
+    "map.sub": "Lugares de la ciudad, paradas de viaje y destinos de la lista de deseos.",
+    "map.leg1": "Fijos (aeropuerto · todos los alojamientos)",
+    "map.leg2": "Ciudad de Málaga", "map.leg3": "Paradas de ruta", "map.leg4": "Lista de deseos",
+    "days.label": "Planes diarios", "days.title": "Día a día",
+    "dh.d6.date": "Lunes · 6 de julio", "dh.d6.title": "✈️ Día de llegada", "dh.d6.badge": "Llegada",
+    "dh.d7.date": "Martes · 7 de julio", "dh.d7.title": "💻 Día de trabajo + Tarde en Málaga", "dh.d7.badge": "Trabajo · Libre 16:00+",
+    "dh.d8.date": "Miércoles · 8 de julio", "dh.d8.title": "💻 Día de trabajo + Tarde en Málaga",
+    "dh.d9.date": "Jueves · 9 de julio", "dh.d9.title": "🌉 Check-out · Alquilar coche · Ronda", "dh.d9.badge": "Día de ruta",
+    "dh.d10.date": "Viernes · 10 de julio", "dh.d10.title": "🛣️ Ronda → Málaga → Nerja + Cuevas y Acantilados",
+    "dh.d11.date": "Sábado · 11 de julio", "dh.d11.title": "🌞 Día libre — Francisco o El Torcal", "dh.d11.badge": "Por confirmar",
+    "dh.d12.date": "Domingo · 12 de julio", "dh.d12.title": "🌞 Día libre — Francisco o El Torcal (el que no fue el 11)",
+    "dh.d13.date": "Lunes · 13 de julio", "dh.d13.title": "✈️ Día de salida", "dh.d13.badge": "Salida",
+    "tr.d6.dep.title": "Salida de Košice — FR4766",
+    "tr.d6.land.title": "Llegar al Aeropuerto de Málaga (AGP)",
+    "tr.d6.checkin.title": "Check-in — Livensa Living Studios Feria",
+    "tr.d6.info.title": "ℹ️ Esta noche solo se trata de llegar bien",
+    "tr.d7.work.title": "Trabajar desde el alojamiento",
+    "tr.d7.bus.title": "🚌 Autobús al centro",
+    "tr.d7.alc.title": "🏯 Alcazaba de Málaga",
+    "tr.d7.gib.title": "🏰 Castillo de Gibralfaro",
+    "tr.d7.dinner.title": "🍽️ Cena en el centro histórico",
+    "tr.d8.merc.title": "Mañana — Mercado de Atarazanas",
+    "tr.d8.bus.title": "🚌 Autobús al centro",
+    "tr.d8.picasso.title": "🎨 Museo Picasso Málaga",
+    "tr.d8.cath.title": "⛪ Exterior de la Catedral + Paseo por el casco antiguo",
+    "tr.d8.muelle.title": "⚓ Muelle Uno + Cena",
+    "tr.d9.pack.title": "Hacer maletas + último desayuno en Livensa",
+    "tr.d9.car.title": "🚗 Recoger el coche de alquiler",
+    "tr.d9.checkout.title": "Check-out de Livensa + salida de Málaga",
+    "tr.d9.arrive.title": "Llegar a Ronda · Check-in · Almuerzo",
+    "tr.d9.puente.title": "🌉 Puente Nuevo + Tajo de Ronda",
+    "tr.d9.palacio.title": "🏛️ Palacio de Mondragón",
+    "tr.d9.toros.title": "🐂 Plaza de Toros",
+    "tr.d9.baths.title": "🕌 Baños Árabes + paseo por La Ciudad",
+    "tr.d9.sunset.title": "🍷 Mirador al atardecer + Cena",
+    "tr.d10.bfast.title": "Desayuno en Ronda · Check-out",
+    "tr.d10.drive1.title": "🚗 Conducir Ronda → Nerja (directo)",
+    "tr.d10.nerja.title": "🌅 Llegar a Nerja · Almuerzo",
+    "tr.d10.cueva.title": "🦇 Cueva de Nerja",
+    "tr.d10.cliffs.title": "🌊 Balcón de Europa + Acantilados de Maro",
+    "tr.d10.drive2.title": "🚗 Conducir Nerja → Apartamento Flores",
+    "d11.optA.label": "Opción A — Día con Francisco",
+    "d11.optB.label": "Opción B — El Torcal de Antequera",
+    "tr.d11.depart.title": "Salir de Málaga en coche",
+    "tr.d11.torcal.title": "🪨 El Torcal de Antequera",
+    "tr.d11.return.title": "Volver a Málaga · Parada opcional en Antequera",
+    "tr.d13.morning.title": "Mañana libre — actividad ligera",
+    "tr.d13.checkout.title": "Check-out de Flores · Cargar el coche",
+    "tr.d13.carreturn.title": "🚗 Devolver el coche en el Aeropuerto AGP",
+    "tr.d13.security.title": "Facturación + seguridad",
+    "tr.d13.depart.title": "✈️ Salida de Málaga — FR4765",
+    "sec.transport.label": "Cómo moverse", "sec.transport.title": "Transporte público en Málaga",
+    "sec.car.label": "Alquiler de coche", "sec.car.title": "Coche de alquiler — Aeropuerto de Málaga",
+    "sec.wish.label": "Lista de deseos", "sec.wish.title": "En el radar — si hay tiempo",
+    "sec.budget.label": "Presupuesto", "sec.budget.title": "Lo que ya hemos pagado",
+    "sec.todo.label": "Lista de tareas", "sec.todo.title": "Pendientes antes del viaje",
+    "sec.evening.label": "Resumen de atracciones nocturnas en Málaga",
+    "sec.rondahotels.label": "Recomendaciones de hoteles en Ronda (gama media €80–130)",
+    "sec.rondabook.label": "Tu alojamiento en Ronda — Reservado ✅",
+    "tip.metro.title": "Consigue la tarjeta de metro",
+    "tip.c1.title": "Cercanías C1 para el aeropuerto",
+    "tip.bus.title": "Autobús como alternativa (más lento)",
+    "tip.walk.title": "La ciudad es caminable",
+    "tip.emt.title": "App EMT Málaga",
+    "tip.queue.title": "Cultura de cola",
+    "tip.car.ibiza.title": "Mejor opción: Seat Ibiza",
+    "tip.car.compare.title": "Dónde comparar", "tip.car.manual.title": "Manual vs automático",
+    "tip.car.credit.title": "Depósito con tarjeta de crédito",
+    "tip.car.photo.title": "Fotografía cada panel al recoger",
+    "tip.car.fuel.title": "Política de combustible",
+    "place.alc.name": "Alcazaba + Gibralfaro", "place.picasso.name": "Museo Picasso Málaga",
+    "place.muelle.name": "Muelle Uno", "place.malagueta.name": "Playa de La Malagueta",
+    "place.hammam.name": "Hammam Al Ándalus", "place.beach.name": "Playa + Chiringuito",
+    "place.tapas.name": "Ruta de tapas / Tour gastronómico", "place.soho.name": "Distrito Soho + Arte urbano",
+    "place.alc2.name": "Alcazaba + Gibralfaro — GRATIS el domingo",
+    "place.picasso2.name": "Museo Picasso — última oportunidad (cierra lunes)",
+    "hotel.gabriel.name": "🥇 Soho Boutique Palacio San Gabriel",
+    "hotel.aire.name": "🥈 Aire de Ronda", "hotel.catalonia.name": "🥉 Hotel Catalonia Reina Victoria",
+    "todo.col.priority": "Prioridad", "todo.col.task": "Tarea",
+    "todo.col.details": "Detalles", "todo.col.status": "Estado",
+    "footer.text": "Creado con Claude AI · Precios estimados 2025–2026 · Tiempos de transporte en condiciones normales · Datos de mapa © OpenStreetMap · Generado: 07-06-2026T19-30"
+  },
+  sk: {
+    "hero.tag": "🇪🇸 Andalúzia · Júl 2026",
+    "hero.title1": "Málaga &",
+    "hero.title2": "Juh",
+    "hero.sub": "7 nocí · 2 osoby · MHD v Málage · Požičané auto na výlety · Nocľah v Ronde zahrnutý",
+    "pill.nights": "7 nocí",
+    "pill.flight": "Ryanair · Košice ↔ Málaga",
+    "pill.work": "Práca z diaľky · voľno od 16:00",
+    "pill.ronda": "Check-out · požičať auto · Ronda",
+    "overview.label": "Prehľad cesty",
+    "overview.title": "8 dní na prvý pohľad",
+    "overview.sub": "Klikni na deň a prejdi na plán.",
+    "tl.d6.date": "Po 6 júl", "tl.d6.place": "Príchod
+Málaga", "tl.d6.note": "pristátie 00:25",
+    "tl.d7.date": "Ut 7 júl", "tl.d7.place": "Práca +
+Večer", "tl.d7.note": "voľno 16:00+",
+    "tl.d8.date": "Str 8 júl", "tl.d8.place": "Práca +
+Večer",
+    "tl.d9.date": "Štv 9 júl", "tl.d9.place": "Ronda", "tl.d9.note": "odchod · auto · Ronda ✅",
+    "tl.d10.date": "Pia 10 júl", "tl.d10.place": "Južná
+trasa", "tl.d10.note": "→ Málaga",
+    "tl.d11.date": "Sob 11 júl", "tl.d11.place": "Málaga",
+    "tl.d12.date": "Ned 12 júl", "tl.d12.place": "Torcal /
+Málaga",
+    "tl.d13.date": "Po 13 júl", "tl.d13.place": "Odlet", "tl.d13.note": "let 16:00",
+    "toc.title": "Obsah",
+    "map.label": "Mapa", "map.title": "Všetky miesta",
+    "map.sub": "Mestské atrakcie, zastávky na trase, výlety a wish-list.",
+    "map.leg1": "Fixné (letisko · všetky ubytovanie)",
+    "map.leg2": "Mesto Málaga", "map.leg3": "Zastávky na trase", "map.leg4": "Wish-list",
+    "days.label": "Denné plány", "days.title": "Deň po dni",
+    "dh.d6.date": "Pondelok · 6. júla", "dh.d6.title": "✈️ Príletový deň", "dh.d6.badge": "Prílet",
+    "dh.d7.date": "Utorok · 7. júla", "dh.d7.title": "💻 Pracovný deň + večer v Málage", "dh.d7.badge": "Práca · Voľno 16:00+",
+    "dh.d8.date": "Streda · 8. júla", "dh.d8.title": "💻 Pracovný deň + večer v Málage",
+    "dh.d9.date": "Štvrtok · 9. júla", "dh.d9.title": "🌉 Check-out · Požičať auto · Ronda", "dh.d9.badge": "Cestovný deň",
+    "dh.d10.date": "Piatok · 10. júla", "dh.d10.title": "🛣️ Ronda → Málaga → Nerja + Jaskyne a útesy",
+    "dh.d11.date": "Sobota · 11. júla", "dh.d11.title": "🌞 Voľný deň — Francisco alebo El Torcal", "dh.d11.badge": "Treba potvrdiť",
+    "dh.d12.date": "Nedeľa · 12. júla", "dh.d12.title": "🌞 Voľný deň — Francisco alebo El Torcal (ten, čo nebol 11.)",
+    "dh.d13.date": "Pondelok · 13. júla", "dh.d13.title": "✈️ Odletový deň", "dh.d13.badge": "Odlet",
+    "tr.d6.dep.title": "Odlet z Košíc — FR4766",
+    "tr.d6.land.title": "Pristátie na letisku Málaga (AGP)",
+    "tr.d6.checkin.title": "Check-in — Livensa Living Studios Feria",
+    "tr.d6.info.title": "ℹ️ Dnešný večer je len o bezpečnom príchode",
+    "tr.d7.work.title": "Práca z ubytovania",
+    "tr.d7.bus.title": "🚌 Autobus do centra",
+    "tr.d7.alc.title": "🏯 Alcazaba de Málaga",
+    "tr.d7.gib.title": "🏰 Hrad Gibralfaro",
+    "tr.d7.dinner.title": "🍽️ Večera v historickom centre",
+    "tr.d8.merc.title": "Ráno — Mercado de Atarazanas",
+    "tr.d8.bus.title": "🚌 Autobus do centra",
+    "tr.d8.picasso.title": "🎨 Múzeum Picassa Málaga",
+    "tr.d8.cath.title": "⛪ Exteriér katedrály + Prechádzka starým mestom",
+    "tr.d8.muelle.title": "⚓ Muelle Uno + Večera",
+    "tr.d9.pack.title": "Balenie + posledné raňajky v Livense",
+    "tr.d9.car.title": "🚗 Prevziať požičané auto",
+    "tr.d9.checkout.title": "Check-out z Livense + odchod z Málagy",
+    "tr.d9.arrive.title": "Príchod do Rondy · Check-in · Obed",
+    "tr.d9.puente.title": "🌉 Puente Nuevo + Rokľa El Tajo",
+    "tr.d9.palacio.title": "🏛️ Palacio de Mondragón",
+    "tr.d9.toros.title": "🐂 Plaza de Toros",
+    "tr.d9.baths.title": "🕌 Arabské kúpele + Prechádzka La Ciudad",
+    "tr.d9.sunset.title": "🍷 Vyhliadka pri západe slnka + Večera",
+    "tr.d10.bfast.title": "Raňajky v Ronde · Check-out",
+    "tr.d10.drive1.title": "🚗 Jazda Ronda → Nerja (priamo)",
+    "tr.d10.nerja.title": "🌅 Príchod do Nerje · Obed",
+    "tr.d10.cueva.title": "🦇 Jaskyňa Nerja",
+    "tr.d10.cliffs.title": "🌊 Balcón de Europa + Útesy Maro",
+    "tr.d10.drive2.title": "🚗 Jazda Nerja → Apartmán Flores",
+    "d11.optA.label": "Možnosť A — Deň s Franciscom",
+    "d11.optB.label": "Možnosť B — El Torcal de Antequera",
+    "tr.d11.depart.title": "Odchod z Málagy autom",
+    "tr.d11.torcal.title": "🪨 El Torcal de Antequera",
+    "tr.d11.return.title": "Návrat do Málagy · Voliteľná zastávka Antequera",
+    "tr.d13.morning.title": "Voľné ráno — len ľahká aktivita",
+    "tr.d13.checkout.title": "Check-out z Flores · Naložiť auto",
+    "tr.d13.carreturn.title": "🚗 Vrátiť auto na letisku AGP",
+    "tr.d13.security.title": "Check-in na letisku + bezpečnostná kontrola",
+    "tr.d13.depart.title": "✈️ Odlet z Málagy — FR4765",
+    "sec.transport.label": "Doprava", "sec.transport.title": "Mestská doprava v Málage",
+    "sec.car.label": "Požičovňa áut", "sec.car.title": "Požičané auto — Letisko Málaga",
+    "sec.wish.label": "Wish-list", "sec.wish.title": "Na radare — ak bude čas",
+    "sec.budget.label": "Rozpočet", "sec.budget.title": "Čo sme už zaplatili",
+    "sec.todo.label": "Zoznam úloh", "sec.todo.title": "Pred cestou treba vybaviť",
+    "sec.evening.label": "Večerné atrakcie Málagy — prehľad",
+    "sec.rondahotels.label": "Odporúčané hotely v Ronde (stredná trieda €80–130)",
+    "sec.rondabook.label": "Vaše ubytovanie v Ronde — Rezervované ✅",
+    "tip.metro.title": "Zaobstaraj si kartu metra",
+    "tip.c1.title": "Cercanías C1 na letisko",
+    "tip.bus.title": "Autobus ako záloha (pomalší)",
+    "tip.walk.title": "Centrum je prístupné pešo",
+    "tip.emt.title": "Aplikácia EMT Málaga",
+    "tip.queue.title": "Kultúra fronty",
+    "tip.car.ibiza.title": "Najlepšia voľba: Seat Ibiza",
+    "tip.car.compare.title": "Kde porovnávať", "tip.car.manual.title": "Manuál vs automat",
+    "tip.car.credit.title": "Depozit kreditnou kartou",
+    "tip.car.photo.title": "Odfotiť každý panel pri prevzatí",
+    "tip.car.fuel.title": "Podmienky tankování",
+    "place.alc.name": "Alcazaba + Gibralfaro", "place.picasso.name": "Múzeum Picassa Málaga",
+    "place.muelle.name": "Muelle Uno", "place.malagueta.name": "Pláž La Malagueta",
+    "place.hammam.name": "Hammam Al Ándalus", "place.beach.name": "Pláž + Chiringuito",
+    "place.tapas.name": "Tapas bar hopping / Gastro tour", "place.soho.name": "Štvrť Soho + Street Art",
+    "place.alc2.name": "Alcazaba + Gibralfaro — ZADARMO v nedeľu",
+    "place.picasso2.name": "Múzeum Picassa — posledná šanca (zatvorené v pondelok)",
+    "hotel.gabriel.name": "🥇 Soho Boutique Palacio San Gabriel",
+    "hotel.aire.name": "🥈 Aire de Ronda", "hotel.catalonia.name": "🥉 Hotel Catalonia Reina Victoria",
+    "todo.col.priority": "Priorita", "todo.col.task": "Úloha",
+    "todo.col.details": "Podrobnosti", "todo.col.status": "Stav",
+    "footer.text": "Vytvorené s Claude AI · Ceny sú odhady 2025–2026 · Časy dopravy sú orientačné · Mapové dáta © OpenStreetMap · Vygenerované: 07-06-2026T19-30"
+  }
+};
+
+// ============================================================
+// APPLY LANGUAGE
+// ============================================================
+var currentLang = 'en';
+
+function applyLang(lang) {
+  currentLang = lang;
+  document.documentElement.lang = lang;
+  var t = translations[lang];
+  if (!t) return;
+  document.querySelectorAll('[data-i18n]').forEach(function(el) {
+    var key = el.getAttribute('data-i18n');
+    if (t[key] !== undefined) el.textContent = t[key];
+  });
+  document.querySelectorAll('[data-i18n-html]').forEach(function(el) {
+    var key = el.getAttribute('data-i18n-html');
+    if (t[key] !== undefined) el.innerHTML = t[key];
+  });
+  document.querySelectorAll('.lang-btn').forEach(function(btn) {
+    btn.classList.toggle('active', btn.dataset.lang === lang);
+  });
+  try { localStorage.setItem('lang', lang); } catch(e) {}
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  var saved = 'en';
+  try { saved = localStorage.getItem('lang') || 'en'; } catch(e) {}
+  applyLang(saved);
+  document.querySelectorAll('.lang-btn').forEach(function(btn) {
+    btn.addEventListener('click', function() { applyLang(btn.dataset.lang); });
   });
 });
 </script>
