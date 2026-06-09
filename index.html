@@ -241,13 +241,13 @@ footer{background:var(--dark);color:rgba(255,255,255,.4);text-align:center;paddi
     <div class="tl-day work" onclick="jumpToDay('d7')">
       <div class="tl-icon">💻</div>
       <div class="tl-date" data-i18n="tl.d7.date">Tue 7 Jul</div>
-      <div class="tl-place" data-i18n="tl.d7.place" data-i18n="tl.d8.place">Work +<br>Evening</div>
-      <div class="tl-note" data-i18n="tl.d7.note" data-i18n="tl.d8.note">free 16:00+</div>
+      <div class="tl-place" data-i18n="tl.d7.place">Work +<br>Evening</div>
+      <div class="tl-note" data-i18n="tl.d7.note">free 16:00+</div>
     </div>
     <div class="tl-day work" onclick="jumpToDay('d8')">
       <div class="tl-icon">💻</div>
       <div class="tl-date" data-i18n="tl.d8.date">Wed 8 Jul</div>
-      <div class="tl-place">Work +<br>Evening</div>
+      <div class="tl-place" data-i18n="tl.d8.place">Work +<br>Evening</div>
       <div class="tl-note">free 16:00+</div>
     </div>
     <div class="tl-day road" onclick="jumpToDay('d9')">
@@ -1827,14 +1827,20 @@ function applyLang(lang) {
   try { localStorage.setItem('lang', lang); } catch(e) {}
 }
 
-document.addEventListener('DOMContentLoaded', function() {
+function initLang() {
   var saved = 'en';
   try { saved = localStorage.getItem('lang') || 'en'; } catch(e) {}
   applyLang(saved);
   document.querySelectorAll('.lang-btn').forEach(function(btn) {
     btn.addEventListener('click', function() { applyLang(btn.dataset.lang); });
   });
-});
+}
+// Script is at end of body - DOM is already ready
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initLang);
+} else {
+  initLang();
+}
 </script>
 </body>
 </html>
