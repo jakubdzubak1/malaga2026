@@ -287,9 +287,9 @@ footer{background:var(--dark);color:rgba(255,255,255,.4);text-align:center;paddi
     <div class="toc-title" data-i18n="toc.title">Contents</div>
     <div class="toc-grid">
       <a class="toc-item" href="#sec-transport"><div class="toc-dot" style="background:var(--muted)"></div>Public Transport</a>
-      <a class="toc-item" href="#sec-car"><div class="toc-dot" style="background:var(--muted)"></div data-i18n="sec.car.label">Car Rental</a>
-      <a class="toc-item" href="#sec-wishlist"><div class="toc-dot" style="background:var(--accent)"></div data-i18n="sec.wish.label">Wishlist</a>
-      <a class="toc-item" href="#sec-budget"><div class="toc-dot" style="background:var(--muted)"></div data-i18n="sec.budget.label">Budget</a>
+      <a class="toc-item" href="#sec-car"><div class="toc-dot" style="background:var(--muted)"></div><span data-i18n="sec.car.label">Car Rental</span> ✅</a>
+      <a class="toc-item" href="#sec-wishlist"><div class="toc-dot" style="background:var(--accent)"></div><span data-i18n="sec.wish.label">Wishlist</span></a>
+      <a class="toc-item" href="#sec-budget"><div class="toc-dot" style="background:var(--muted)"></div><span data-i18n="sec.budget.label">Budget</span></a>
       <a class="toc-item" href="#sec-todo"><div class="toc-dot" style="background:var(--primary)"></div>✅ To-Do Checklist</a>
     </div>
   </div>
@@ -592,12 +592,13 @@ footer{background:var(--dark);color:rgba(255,255,255,.4);text-align:center;paddi
           <div class="ttime">10:00</div>
           <div class="tdot primary"></div>
           <div class="tcontent">
-            <div class="t-title" data-i18n="tr.d9.car.title">🚗 Pick up rental car</div>
-            <div class="t-desc">Pick up at <strong>Málaga Airport (AGP)</strong> or a city-centre location. Return will be at AGP on 13 July before your flight. Take Cercanías C1 (12 min, €1.80) to airport if picking up there.</div>
+            <div class="t-title" data-i18n="tr.d9.car.title">🚗 Pick up rental car — Wiber</div>
+            <div class="t-desc">Pick up at <strong>Málaga Airport (AGP)</strong> — off-site, shuttle bus from terminal. Take Cercanías C1 (12 min, €1.80) from city to airport. At AGP: exit terminal → follow "Cercanías" signs → parking area with yellow lines → wait for Wiber shuttle. Booking <strong>#169885104</strong>. Ford Ka or similar, manual, AC.</div>
             <div class="t-chips">
-              <span class="chip ct">🔑 See Car Rental section below</span>
+              <span class="chip cp">✅ Booked · €70.73 paid</span>
+              <span class="chip ct"><a href="#sec-car" style="color:inherit;text-decoration:none;">🔑 See Car Rental section</a></span>
               <span class="chip cw">📸 Photo every scratch at pickup</span>
-              <span class="chip cw">💳 Credit card required for deposit</span>
+              <span class="chip cw">💳 €1,000 deposit blocked on card</span>
             </div>
           </div>
         </div>
@@ -957,9 +958,13 @@ footer{background:var(--dark);color:rgba(255,255,255,.4);text-align:center;paddi
           <div class="ttime">12:30</div>
           <div class="tdot primary"></div>
           <div class="tcontent">
-            <div class="t-title" data-i18n="tr.d13.carreturn.title">🚗 Return rental car at AGP Airport</div>
-            <div class="t-desc">Drive to Málaga Airport (~20 min from city). Return car at the rental desk — allow 20–30 min for the return process. Check the car is clean and undamaged before handing keys. Keep your damage photo evidence ready.</div>
-            <div class="t-chips"><span class="chip cw">⏱️ Allow 30 min for return process</span></div>
+            <div class="t-title" data-i18n="tr.d13.carreturn.title">🚗 Return rental car — Wiber</div>
+            <div class="t-desc">Drive to <strong>Wiber Rent a Car</strong>, Carretera Guadalmar 7, Polígono Industrial Villa Rosa (~20 min from city). Fill the tank to the same level as pickup before returning — nearest petrol stations on the way. Allow 20–30 min for the return process + shuttle back to terminal. Keep your pickup damage photos ready. Booking <strong>#169885104</strong>.</div>
+            <div class="t-chips">
+              <span class="chip cw">⏱️ Allow 30 min for return + shuttle</span>
+              <span class="chip cw">⛽ Fill tank to pickup level — €19 fee if short</span>
+              <span class="chip cw">⚠️ Rental ends 16:00 = flight time!</span>
+            </div>
           </div>
         </div>
         <div class="trow">
@@ -1042,114 +1047,118 @@ footer{background:var(--dark);color:rgba(255,255,255,.4);text-align:center;paddi
 
   <!-- ======================== CAR RENTAL ======================== -->
   <hr class="divider">
-  <div id="sec-car" class="section-label">Car Rental</div>
-  <h2 class="section-title" data-i18n="sec.car.title">Rental Car — Málaga Airport</h2>
-  <p class="section-sub">Pick up 9 July morning, return 13 July at AGP before your flight. 4 days total. Small car is ideal for 2 people — easy to park in Ronda's narrow streets.</p>
+  <div id="sec-car" class="section-label" data-i18n="sec.car.label">Car Rental</div>
+  <h2 class="section-title" data-i18n="sec.car.title">Rental Car — Booked ✅</h2>
+  <p class="section-sub" data-i18n="sec.car.sub">Wiber Rent a Car · 5 days · Pick up 9 July · Return 13 July · Málaga Airport (off-site, shuttle)</p>
 
-  <!-- PRICE TABLE -->
-  <div class="section-label" style="margin-bottom:8px;margin-top:4px;">Average prices — small car · July · 4 days</div>
-  <table style="width:100%;border-collapse:collapse;font-size:13px;background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 2px 16px rgba(0,0,0,.06);margin-bottom:20px;">
-    <thead>
-      <tr style="background:var(--secondary);color:#fff;">
-        <th style="text-align:left;padding:10px 14px;font-weight:600;">Car model</th>
-        <th style="text-align:left;padding:10px 14px;font-weight:600;">Category</th>
-        <th style="text-align:right;padding:10px 14px;font-weight:600;">Per day</th>
-        <th style="text-align:right;padding:10px 14px;font-weight:600;">4 days (excl. insurance)</th>
-        <th style="text-align:right;padding:10px 14px;font-weight:600;">4 days (full cover est.)</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr style="border-bottom:1px solid var(--sand);">
-        <td style="padding:10px 14px;font-weight:700;">Opel Corsa / similar</td>
-        <td style="padding:10px 14px;color:var(--muted);">Mini · cheapest</td>
-        <td style="padding:10px 14px;text-align:right;">~€15–20</td>
-        <td style="padding:10px 14px;text-align:right;font-weight:700;">~€60–80</td>
-        <td style="padding:10px 14px;text-align:right;font-weight:700;">~€120–160</td>
-      </tr>
-      <tr style="border-bottom:1px solid var(--sand);background:rgba(0,0,0,.02);">
-        <td style="padding:10px 14px;font-weight:700;">Fiat 500 / similar</td>
-        <td style="padding:10px 14px;color:var(--muted);">Mini · 3-door</td>
-        <td style="padding:10px 14px;text-align:right;">~€19–25</td>
-        <td style="padding:10px 14px;text-align:right;font-weight:700;">~€75–100</td>
-        <td style="padding:10px 14px;text-align:right;font-weight:700;">~€140–180</td>
-      </tr>
-      <tr style="border-bottom:1px solid var(--sand);">
-        <td style="padding:10px 14px;font-weight:700;">Seat Ibiza / similar ⭐</td>
-        <td style="padding:10px 14px;color:var(--muted);">Economy · 5-door · recommended</td>
-        <td style="padding:10px 14px;text-align:right;">~€19–28</td>
-        <td style="padding:10px 14px;text-align:right;font-weight:700;">~€80–110</td>
-        <td style="padding:10px 14px;text-align:right;font-weight:700;">~€150–200</td>
-      </tr>
-      <tr>
-        <td style="padding:10px 14px;font-weight:700;">Automatic (any model)</td>
-        <td style="padding:10px 14px;color:var(--muted);">Add 30–50% to above</td>
-        <td style="padding:10px 14px;text-align:right;color:var(--warn);">+30–50%</td>
-        <td colspan="2" style="padding:10px 14px;text-align:right;color:var(--warn);">Book early — sells out fast in July</td>
-      </tr>
-    </tbody>
-  </table>
-
-  <div class="warn-box">
-    <strong>⚠️ Insurance is the #1 trap in Málaga rentals</strong>
-    Budget companies (Centauro, Goldcar) advertise €8–15/day but pressure you at the counter to buy their own insurance — often doubling the total. Best defence: book via <strong>DiscoverCars.com</strong> or <strong>MalagaCar.com</strong> with full insurance already included, or book Enterprise/Alamo directly. <strong>Marbesol</strong> is a local option that includes comprehensive cover with no deposit required.
+  <!-- BOOKING CONFIRMATION -->
+  <div class="warn-box info" style="margin-bottom:16px;">
+    <strong>🚗 Wiber Rent a Car — Booking Confirmed</strong>
+    <strong data-i18n="car.booking.label">Booking #:</strong> 169885104 (Wiber) · 777383299 (Booking.com)<br>
+    <strong data-i18n="car.driver.label">Main driver:</strong> Jakub Džubák<br>
+    <strong data-i18n="car.car.label">Car:</strong> Mini class — Ford Ka or similar · 2-door · 4-seat · Manual · AC · Unlimited km<br>
+    <strong data-i18n="car.luggage.label">Luggage:</strong> 1 large bag + 1 small bag<br>
+    <strong data-i18n="car.pickup.label">Pick up:</strong> Thu 9 July · 7:00 — Málaga Airport (off-site, shuttle)<br>
+    <strong data-i18n="car.return.label">Return:</strong> Mon 13 July · 16:00 — Málaga Airport (off-site, shuttle)<br>
+    <strong data-i18n="car.insurance.label">Insurance:</strong> CDW + Theft protection + TPL included · Additional insurance pre-paid<br>
+    <strong data-i18n="car.deposit.label">Deposit:</strong> €1,000 blocked on credit/debit card (Visa or MasterCard only, physical card)<br>
+    <strong data-i18n="car.fuel.label">Fuel:</strong> Return with same level as pickup · €19 refueling fee if short<br>
+    <strong data-i18n="car.price.label">Total paid:</strong> €70.73 (rental €24.09 + insurance €52.66 − Genius €3.61 − loyalty €2.41)<br>
+    🌐 <a href="https://www.wiberrentacar.com/en/" target="_blank" style="color:var(--secondary);font-weight:700;">wiberrentacar.com</a> · 📞 <a href="tel:+34952004356" style="color:var(--secondary);font-weight:700;">+34 952 004 356</a>
   </div>
 
-  <!-- COMPANY CARDS -->
-  <div class="section-label" style="margin-bottom:8px;">Recommended companies at AGP</div>
-  <div class="hotel-grid" style="margin-bottom:20px;">
-    <div class="hotel-card">
-      <div class="hotel-name">🥇 Enterprise — in terminal</div>
-      <div class="hotel-desc">Best-rated at AGP (8.5/10). No shuttle needed — desk inside Terminal 3. Transparent pricing, no aggressive upselling. Most reliable for 4-day rentals.</div>
-      <div class="hotel-meta"><span class="chip ct">In-terminal · 8.5/10</span><span class="chip cp">~€35–50/day incl. insurance</span></div>
-    </div>
-    <div class="hotel-card">
-      <div class="hotel-name">🥈 Alamo — in terminal</div>
-      <div class="hotel-desc">Part of the Enterprise group, same quality standards. Good value for multi-day rentals. In-terminal, no shuttle.</div>
-      <div class="hotel-meta"><span class="chip ct">In-terminal · 8.2/10</span><span class="chip cp">~€30–45/day incl. insurance</span></div>
-    </div>
-    <div class="hotel-card">
-      <div class="hotel-name">Marbesol — off-site (local)</div>
-      <div class="hotel-desc">Málaga-based local company. Includes comprehensive insurance, <strong>no deposit required</strong>. Shuttle from airport. Good alternative if Enterprise/Alamo are sold out.</div>
-      <div class="hotel-meta"><span class="chip cn">No deposit · local company</span><span class="chip cp">~€19–30/day all-inclusive</span></div>
-    </div>
-    <div class="hotel-card">
-      <div class="hotel-name">Centauro — off-site shuttle</div>
-      <div class="hotel-desc">Cheapest base prices but notorious counter upselling. If using, pre-book their top insurance package online before arriving. Take photos of every scratch.</div>
-      <div class="hotel-meta"><span class="chip cw">Shuttle · upselling risk · 7.8/10</span><span class="chip cp">~€15–20/day + insurance extra</span></div>
-    </div>
+  <!-- PICKUP INSTRUCTIONS -->
+  <div class="section-label" style="margin-bottom:8px;" data-i18n="car.pickup.instructions.label">Pickup Instructions — Shuttle from Airport</div>
+  <div class="warn-box" style="margin-bottom:16px;">
+    <strong data-i18n="car.pickup.instructions.title">📍 How to find the Wiber shuttle at Málaga Airport</strong>
+    <ol style="margin:8px 0 0 18px;line-height:1.8;font-size:13px;">
+      <li data-i18n="car.pickup.step1">Exit the terminal and cross the pedestrian crossing.</li>
+      <li data-i18n="car.pickup.step2">Continue straight, following signs for "Cercanías" (train station), and cross another pedestrian crossing.</li>
+      <li data-i18n="car.pickup.step3">Just to the right, behind the wall of the Airport "Cercanías" Station, you will find a parking area marked with yellow lines.</li>
+      <li data-i18n="car.pickup.step4">Follow the yellow line area to the end. The Wiber shuttle will pick you up between the second-to-last and the last gray column, right by the second pedestrian crossing.</li>
+    </ol>
+    <p style="margin-top:8px;font-size:12px;color:var(--primary);font-weight:700;" data-i18n="car.pickup.important">⚠️ Important: We recommend taking this information with you upon arrival at the airport.</p>
   </div>
 
-  <!-- TIPS -->
-  <div class="tips-grid">
+  <!-- DROP-OFF INFO -->
+  <div class="section-label" style="margin-bottom:8px;" data-i18n="car.dropoff.label">Drop-off Information</div>
+  <div class="warn-box info" style="margin-bottom:16px;">
+    <strong data-i18n="car.dropoff.title">📍 Drop-off Location</strong>
+    <strong>Wiber Rent a Car Málaga</strong><br>
+    Carretera Guadalmar 7, 29004 Málaga, Polígono Industrial Villa Rosa<br>
+    <strong data-i18n="car.dropoff.hours.label">Hours:</strong> Monday to Sunday, 7:00 AM to 11:00 PM<br>
+    📞 <a href="tel:+34964010000" style="color:var(--secondary);font-weight:700;">+34 964 010 000</a> ·
+    <a href="https://maps.google.com/?q=Wiber+Rent+a+Car+Malaga+Carretera+Guadalmar+7" target="_blank" style="color:var(--secondary);font-weight:700;">📍 See on Google Maps</a><br>
+    <span style="font-size:12px;color:var(--muted);" data-i18n="car.dropoff.note">Staff will explain the return procedure when you pick up the car.</span>
+  </div>
+
+  <!-- WHAT TO BRING -->
+  <div class="section-label" style="margin-bottom:8px;" data-i18n="car.bring.label">What to Bring at Pickup</div>
+  <div class="tips-grid" style="margin-bottom:20px;">
     <div class="tip-card">
-      <div class="tip-icon">⭐</div>
-      <div class="tip-title" data-i18n="tip.car.ibiza.title">Best pick for you: Seat Ibiza</div>
-      <div class="tip-text">5-door, 2 large bags, comfortable for long drives. More practical than Fiat 500 (only 3 doors, 1 bag). Book Economy class and you'll likely get an Ibiza or similar.</div>
+      <div class="tip-icon">📄</div>
+      <div class="tip-title" data-i18n="car.bring.voucher">Voucher (printed or digital)</div>
+      <div class="tip-text" data-i18n="car.bring.voucher.desc">Wiber requires a printed copy OR electronic voucher. Without it, they may not release the car or may re-charge the full rental.</div>
     </div>
     <div class="tip-card">
-      <div class="tip-icon">🔍</div>
-      <div class="tip-title" data-i18n="tip.car.compare.title">Where to compare</div>
-      <div class="tip-text"><strong>DiscoverCars.com</strong> shows all-in prices with insurance included. <strong>MalagaCar.com</strong> is the local specialist. Compare both — same car can differ by €30–50 total.</div>
+      <div class="tip-icon">🪪</div>
+      <div class="tip-title" data-i18n="car.bring.license">Driver's license</div>
+      <div class="tip-text" data-i18n="car.bring.license.desc">Full valid license for each driver. Must be physical — digital licenses are NOT accepted. Held for at least 1 year.</div>
     </div>
     <div class="tip-card">
-      <div class="tip-icon">🚗</div>
-      <div class="tip-title" data-i18n="tip.car.manual.title">Manual vs automatic</div>
-      <div class="tip-text">Almost all cheap cars in Spain are manual. Automatics cost 30–50% more and sell out in July. Book automatic explicitly and early if needed.</div>
+      <div class="tip-icon">🛂</div>
+      <div class="tip-title" data-i18n="car.bring.id">Passport or ID card</div>
+      <div class="tip-text" data-i18n="car.bring.id.desc">Passport or citizen ID for each driver. Plus your boarding pass or flight ticket showing return date and time.</div>
     </div>
     <div class="tip-card">
       <div class="tip-icon">💳</div>
-      <div class="tip-title" data-i18n="tip.car.credit.title">Credit card deposit</div>
-      <div class="tip-text">A credit card (not debit) is required — typically €500–1,500 blocked. Released within 5–10 days of return. Exception: Marbesol requires no deposit at all.</div>
+      <div class="tip-title" data-i18n="tip.car.credit.title">Credit/debit card (physical)</div>
+      <div class="tip-text" data-i18n="car.bring.card.desc">Visa or MasterCard only. Physical card required — prepaid, rechargeable and virtual cards NOT accepted. €1,000 deposit will be blocked. You must know the card PIN.</div>
     </div>
+    <div class="tip-card">
+      <div class="tip-icon">✈️</div>
+      <div class="tip-title" data-i18n="car.bring.ticket">Flight ticket / boarding pass</div>
+      <div class="tip-text" data-i18n="car.bring.ticket.desc">Required at airport pickup locations. Must show return flight date and time of departure.</div>
+    </div>
+  </div>
+
+  <!-- IMPORTANT WARNINGS -->
+  <div class="warn-box critical" style="margin-bottom:16px;">
+    <strong data-i18n="car.warn.return">⚠️ Return time = flight time! Plan ahead</strong>
+    <span data-i18n="car.warn.return.desc">Your rental return is 16:00 — the same time as your flight FR4765. Return the car by <strong>12:30</strong> at the latest to allow for the shuttle back to the terminal, check-in, and security. Fill the tank before returning.</span>
+  </div>
+
+  <!-- REMAINING TIPS -->
+  <div class="tips-grid">
     <div class="tip-card">
       <div class="tip-icon">📸</div>
       <div class="tip-title" data-i18n="tip.car.photo.title">Photo every panel at pickup</div>
-      <div class="tip-text">Before driving away, photograph every panel, wheel arch, windscreen, and interior — timestamped. Walk with the agent. This is your protection against false damage claims at drop-off.</div>
+      <div class="tip-text" data-i18n="tip.car.photo.text">Before driving away, photograph every panel, wheel arch, windscreen, and interior — timestamped. Walk with the agent. This is your protection against false damage claims at drop-off.</div>
     </div>
     <div class="tip-card">
       <div class="tip-icon">⛽</div>
-      <div class="tip-title" data-i18n="tip.car.fuel.title">Fuel policy</div>
-      <div class="tip-text">Always choose "full-to-full" — pick up full, return full. Avoid "full-to-empty" where you prepay fuel at inflated rates. Fill the tank yourself at a petrol station near the airport before return.</div>
+      <div class="tip-title" data-i18n="tip.car.fuel.title">Fuel: return same level</div>
+      <div class="tip-text" data-i18n="tip.car.fuel.text">Check fuel level at pickup. Return with the same amount. If you return with less, Wiber charges a €19 refueling fee + the cost of missing fuel at market price. Fill up near the airport before drop-off.</div>
+    </div>
+    <div class="tip-card">
+      <div class="tip-icon">💳</div>
+      <div class="tip-title" data-i18n="tip.car.deposit.title">€1,000 deposit blocked</div>
+      <div class="tip-text" data-i18n="tip.car.deposit.text">Wiber blocks €1,000 on your card at pickup (theft excess + collision excess). Returned after the rental if all conditions are met. Make sure the card has sufficient available balance.</div>
+    </div>
+    <div class="tip-card">
+      <div class="tip-icon">🚗</div>
+      <div class="tip-title" data-i18n="tip.car.specs.title">Ford Ka — compact 2-door</div>
+      <div class="tip-text" data-i18n="tip.car.specs.text">Mini class, manual, AC, 4 seats. 1 large + 1 small bag only — pack light for the Ronda trip. 2-door access to rear seats can be tight. Perfect for narrow Ronda streets.</div>
+    </div>
+    <div class="tip-card">
+      <div class="tip-icon">🕐</div>
+      <div class="tip-title" data-i18n="tip.car.late.title">Late arrival = no car</div>
+      <div class="tip-text" data-i18n="tip.car.late.text">Arrive at the shuttle by your booked pickup time. If you're late and the grace period expires, the car may not be held. Contact Wiber directly at +34 952 004 356 if delayed.</div>
+    </div>
+    <div class="tip-card">
+      <div class="tip-icon">👤</div>
+      <div class="tip-title" data-i18n="tip.car.age.title">Minimum age: 21</div>
+      <div class="tip-text" data-i18n="tip.car.age.text">All drivers must be at least 21 years old. Additional drivers can be added at the counter — each must present their own license and ID.</div>
     </div>
   </div>
 
@@ -1255,17 +1264,23 @@ footer{background:var(--dark);color:rgba(255,255,255,.4);text-align:center;paddi
         <td style="padding:11px 16px;text-align:right;font-weight:700;">€336.50</td>
         <td style="padding:11px 16px;text-align:right;font-weight:700;">€168.25</td>
       </tr>
+      <tr style="border-bottom:1px solid var(--sand);">
+        <td style="padding:11px 16px;font-weight:700;">🚗 Car Rental · Wiber</td>
+        <td style="padding:11px 16px;color:var(--muted);">9–13 July · 5 days · Ford Ka · CDW+Theft+TPL incl. · Booking 169885104 · <a href="https://www.wiberrentacar.com/en/" target="_blank" style="color:var(--secondary);">🌐 wiberrentacar.com</a></td>
+        <td style="padding:11px 16px;text-align:right;font-weight:700;">€70.73</td>
+        <td style="padding:11px 16px;text-align:right;font-weight:700;">€35.37</td>
+      </tr>
       <tr style="background:var(--secondary);color:#fff;">
         <td style="padding:12px 16px;font-weight:700;" colspan="2">Total pre-paid</td>
-        <td style="padding:12px 16px;text-align:right;font-weight:900;font-size:16px;">€1,290.48</td>
-        <td style="padding:12px 16px;text-align:right;font-weight:900;font-size:16px;">€645.24</td>
+        <td style="padding:12px 16px;text-align:right;font-weight:900;font-size:16px;">€1,361.21</td>
+        <td style="padding:12px 16px;text-align:right;font-weight:900;font-size:16px;">€680.61</td>
       </tr>
     </tbody>
   </table>
 
   <div class="warn-box info" style="margin-top:16px;">
     <strong>ℹ️ Still to budget (estimates)</strong>
-    Rental car ~€150–200 for 4 days · Activities ~€50–80/person (Nerja caves ~€31 for 2) · Food & transport ~€30–40/day for 2
+    Activities ~€50–80/person (Nerja caves ~€31 for 2) · Food & transport ~€30–40/day for 2 · ⚠️ €1,000 deposit blocked on card for car rental (returned after)
   </div>
 
   <!-- ======================== TODO ======================== -->
@@ -1321,12 +1336,12 @@ footer{background:var(--dark);color:rgba(255,255,255,.4);text-align:center;paddi
         <td style="color:var(--muted);">Taxi booked for airport transfer to accommodation. See Taxi-Malaga.pdf for the booking details.</td>
         <td><span class="todo-status todo-done">✅ Done</span></td>
       </tr>
-      <tr>
+      <tr style="opacity:.5;">
         <td style="color:var(--muted);font-weight:700;">6</td>
         <td><span class="prio prio-high">🔴 High</span></td>
         <td style="font-weight:700;">🚗 Rental car — pick up 9 Jul</td>
-        <td style="color:var(--muted);">Book Seat Ibiza or similar · 4 days · full insurance · Enterprise or Alamo at AGP · return 13 Jul</td>
-        <td><span class="todo-status todo-pending">❌ Not booked</span></td>
+        <td style="color:var(--muted);">Wiber Rent a Car · Booking 169885104 · Ford Ka · 5 days · Pick up 9 Jul 7:00 · Return 13 Jul 16:00 · €70.73</td>
+        <td><span class="todo-status todo-done">✅ Done</span></td>
       </tr>
       <tr style="opacity:.5;">
         <td style="color:var(--muted);font-weight:700;">7</td>
@@ -1456,6 +1471,7 @@ window.addEventListener('load', function() {
   var pts = [
     // Fixed
     [36.675,-4.499,'#1B3A6B','✈️','Málaga Airport AGP','Arrival 7 Jul 00:25 (FR4766)<br>Departure 13 Jul 16:00 (FR4765)<br>Car return 13 Jul before flight'],
+    [36.677,-4.478,'#1B3A6B','🚗','Wiber Rent a Car — Pickup/Return','Booking 169885104 · Ford Ka<br>Pick up: 9 Jul 7:00 · Return: 13 Jul 16:00<br>Carretera Guadalmar 7, 29004 Málaga<br>Off-site — shuttle from airport terminal<br>📞 +34 952 004 356'],
     [36.706,-4.456,'#1B3A6B','🏠','Livensa Living Studios Feria','6–9 July · Pre-paid ✅<br>C. Baliza 2, Cruz de Humilladero<br>Check-out: 9 July 12:00'],
     [36.7355,-4.4207,'#1B3A6B','🌸','Flores Apartment','10–13 July · Pre-paid ✅<br>C. Obispo Miguel Bucarelli, Ciudad Jardin<br>Check-in 10 Jul 16:00–21:00 · Check-out 13 Jul midnight<br>Kitchen · AC · Netflix · Free parking nearby'],
     // Málaga city
@@ -1565,7 +1581,7 @@ const translations = {
     "tr.d8.muelle.title": "⚓ Muelle Uno + Dinner",
     // Day 9
     "tr.d9.pack.title": "Pack + last breakfast at Livensa",
-    "tr.d9.car.title": "🚗 Pick up rental car",
+    "tr.d9.car.title": "🚗 Pick up rental car — Wiber",
     "tr.d9.checkout.title": "Check out of Livensa + depart Málaga",
     "tr.d9.arrive.title": "Arrive Ronda · Check in · Lunch",
     "tr.d9.puente.title": "🌉 Puente Nuevo + El Tajo Gorge",
@@ -1589,12 +1605,50 @@ const translations = {
     // Day 13
     "tr.d13.morning.title": "Morning free — light activity only",
     "tr.d13.checkout.title": "Check out of Flores · Load car",
-    "tr.d13.carreturn.title": "🚗 Return rental car at AGP Airport",
+    "tr.d13.carreturn.title": "🚗 Return rental car — Wiber",
     "tr.d13.security.title": "Airport check-in + security",
     "tr.d13.depart.title": "✈️ Depart Málaga — FR4765",
     // Sections
     "sec.transport.label": "Getting Around", "sec.transport.title": "Public Transport in Málaga",
-    "sec.car.label": "Car Rental", "sec.car.title": "Rental Car — Málaga Airport",
+    "sec.car.label": "Car Rental", "sec.car.title": "Rental Car — Booked ✅",
+    "sec.car.sub": "Wiber Rent a Car · 5 days · Pick up 9 July · Return 13 July · Málaga Airport (off-site, shuttle)",
+    "car.booking.label": "Booking #:", "car.driver.label": "Main driver:", "car.car.label": "Car:",
+    "car.luggage.label": "Luggage:", "car.pickup.label": "Pick up:", "car.return.label": "Return:",
+    "car.insurance.label": "Insurance:", "car.deposit.label": "Deposit:", "car.fuel.label": "Fuel:",
+    "car.price.label": "Total paid:",
+    "car.pickup.instructions.label": "Pickup Instructions — Shuttle from Airport",
+    "car.pickup.instructions.title": "📍 How to find the Wiber shuttle at Málaga Airport",
+    "car.pickup.step1": "Exit the terminal and cross the pedestrian crossing.",
+    "car.pickup.step2": "Continue straight, following signs for \"Cercanías\" (train station), and cross another pedestrian crossing.",
+    "car.pickup.step3": "Just to the right, behind the wall of the Airport \"Cercanías\" Station, you will find a parking area marked with yellow lines.",
+    "car.pickup.step4": "Follow the yellow line area to the end. The Wiber shuttle will pick you up between the second-to-last and the last gray column, right by the second pedestrian crossing.",
+    "car.pickup.important": "⚠️ Important: We recommend taking this information with you upon arrival at the airport.",
+    "car.dropoff.label": "Drop-off Information",
+    "car.dropoff.title": "📍 Drop-off Location",
+    "car.dropoff.hours.label": "Hours:",
+    "car.dropoff.note": "Staff will explain the return procedure when you pick up the car.",
+    "car.bring.label": "What to Bring at Pickup",
+    "car.bring.voucher": "Voucher (printed or digital)",
+    "car.bring.voucher.desc": "Wiber requires a printed copy OR electronic voucher. Without it, they may not release the car or may re-charge the full rental.",
+    "car.bring.license": "Driver's license",
+    "car.bring.license.desc": "Full valid license for each driver. Must be physical — digital licenses are NOT accepted. Held for at least 1 year.",
+    "car.bring.id": "Passport or ID card",
+    "car.bring.id.desc": "Passport or citizen ID for each driver. Plus your boarding pass or flight ticket showing return date and time.",
+    "car.bring.card.desc": "Visa or MasterCard only. Physical card required — prepaid, rechargeable and virtual cards NOT accepted. €1,000 deposit will be blocked. You must know the card PIN.",
+    "car.bring.ticket": "Flight ticket / boarding pass",
+    "car.bring.ticket.desc": "Required at airport pickup locations. Must show return flight date and time of departure.",
+    "car.warn.return": "⚠️ Return time = flight time! Plan ahead",
+    "car.warn.return.desc": "Your rental return is 16:00 — the same time as your flight FR4765. Return the car by 12:30 at the latest to allow for the shuttle back to the terminal, check-in, and security. Fill the tank before returning.",
+    "tip.car.photo.text": "Before driving away, photograph every panel, wheel arch, windscreen, and interior — timestamped. Walk with the agent. This is your protection against false damage claims at drop-off.",
+    "tip.car.fuel.text": "Check fuel level at pickup. Return with the same amount. If you return with less, Wiber charges a €19 refueling fee + the cost of missing fuel at market price. Fill up near the airport before drop-off.",
+    "tip.car.deposit.title": "€1,000 deposit blocked",
+    "tip.car.deposit.text": "Wiber blocks €1,000 on your card at pickup (theft excess + collision excess). Returned after the rental if all conditions are met. Make sure the card has sufficient available balance.",
+    "tip.car.specs.title": "Ford Ka — compact 2-door",
+    "tip.car.specs.text": "Mini class, manual, AC, 4 seats. 1 large + 1 small bag only — pack light for the Ronda trip. 2-door access to rear seats can be tight. Perfect for narrow Ronda streets.",
+    "tip.car.late.title": "Late arrival = no car",
+    "tip.car.late.text": "Arrive at the shuttle by your booked pickup time. If you're late and the grace period expires, the car may not be held. Contact Wiber directly at +34 952 004 356 if delayed.",
+    "tip.car.age.title": "Minimum age: 21",
+    "tip.car.age.text": "All drivers must be at least 21 years old. Additional drivers can be added at the counter — each must present their own license and ID.",
     "sec.wish.label": "Wishlist", "sec.wish.title": "On the Radar — If Time Allows",
     "sec.wish.sub": "These didn't make the main plan but could be worth detours on the drive back from Ronda to Málaga.",
     "sec.wish.note": "These nearby ideas and backups are still worth considering:",
@@ -1608,10 +1662,8 @@ const translations = {
     "tip.bus.title": "Bus as Backup (Slower)", "tip.walk.title": "The City is Walkable",
     "tip.emt.title": "EMT Málaga App", "tip.queue.title": "Queue Culture",
     // Tips - car
-    "tip.car.ibiza.title": "Best pick for you: Seat Ibiza",
-    "tip.car.compare.title": "Where to compare", "tip.car.manual.title": "Manual vs automatic",
-    "tip.car.credit.title": "Credit card deposit", "tip.car.photo.title": "Photo every panel at pickup",
-    "tip.car.fuel.title": "Fuel policy",
+    "tip.car.credit.title": "Credit/debit card (physical)", "tip.car.photo.title": "Photo every panel at pickup",
+    "tip.car.fuel.title": "Fuel: return same level",
     // Places
     "place.alc.name": "Alcazaba + Gibralfaro", "place.picasso.name": "Museo Picasso Málaga",
     "place.muelle.name": "Muelle Uno", "place.malagueta.name": "La Malagueta Beach",
@@ -1705,7 +1757,7 @@ const translations = {
     "tr.d8.cath.title": "⛪ Exterior de la Catedral + Paseo por el casco antiguo",
     "tr.d8.muelle.title": "⚓ Muelle Uno + Cena",
     "tr.d9.pack.title": "Hacer maletas + último desayuno en Livensa",
-    "tr.d9.car.title": "🚗 Recoger el coche de alquiler",
+    "tr.d9.car.title": "🚗 Recoger el coche — Wiber",
     "tr.d9.checkout.title": "Check-out de Livensa + salida de Málaga",
     "tr.d9.arrive.title": "Llegar a Ronda · Check-in · Almuerzo",
     "tr.d9.puente.title": "🌉 Puente Nuevo + Tajo de Ronda",
@@ -1726,11 +1778,49 @@ const translations = {
     "tr.d11.return.title": "Volver a Málaga · Parada opcional en Antequera",
     "tr.d13.morning.title": "Mañana libre — actividad ligera",
     "tr.d13.checkout.title": "Check-out de Flores · Cargar el coche",
-    "tr.d13.carreturn.title": "🚗 Devolver el coche en el Aeropuerto AGP",
+    "tr.d13.carreturn.title": "🚗 Devolver el coche — Wiber",
     "tr.d13.security.title": "Facturación + seguridad",
     "tr.d13.depart.title": "✈️ Salida de Málaga — FR4765",
     "sec.transport.label": "Cómo moverse", "sec.transport.title": "Transporte público en Málaga",
-    "sec.car.label": "Alquiler de coche", "sec.car.title": "Coche de alquiler — Aeropuerto de Málaga",
+    "sec.car.label": "Alquiler de coche", "sec.car.title": "Coche de alquiler — Reservado ✅",
+    "sec.car.sub": "Wiber Rent a Car · 5 días · Recogida 9 julio · Devolución 13 julio · Aeropuerto de Málaga (fuera, lanzadera)",
+    "car.booking.label": "Reserva nº:", "car.driver.label": "Conductor principal:", "car.car.label": "Coche:",
+    "car.luggage.label": "Equipaje:", "car.pickup.label": "Recogida:", "car.return.label": "Devolución:",
+    "car.insurance.label": "Seguro:", "car.deposit.label": "Depósito:", "car.fuel.label": "Combustible:",
+    "car.price.label": "Total pagado:",
+    "car.pickup.instructions.label": "Instrucciones de recogida — Lanzadera desde el aeropuerto",
+    "car.pickup.instructions.title": "📍 Cómo encontrar la lanzadera de Wiber en el Aeropuerto de Málaga",
+    "car.pickup.step1": "Salga de la terminal y cruce el paso de peatones.",
+    "car.pickup.step2": "Continúe recto, siguiendo las señales de \"Cercanías\" (estación de tren), y cruce otro paso de peatones.",
+    "car.pickup.step3": "A la derecha, detrás del muro de la Estación de Cercanías del aeropuerto, encontrará un aparcamiento marcado con líneas amarillas.",
+    "car.pickup.step4": "Siga las líneas amarillas hasta el final. La lanzadera de Wiber le recogerá entre la penúltima y la última columna gris, junto al segundo paso de peatones.",
+    "car.pickup.important": "⚠️ Importante: Le recomendamos llevar esta información consigo a su llegada al aeropuerto.",
+    "car.dropoff.label": "Información de devolución",
+    "car.dropoff.title": "📍 Lugar de devolución",
+    "car.dropoff.hours.label": "Horario:",
+    "car.dropoff.note": "El personal le explicará el procedimiento de devolución al recoger el coche.",
+    "car.bring.label": "Qué llevar a la recogida",
+    "car.bring.voucher": "Voucher (impreso o digital)",
+    "car.bring.voucher.desc": "Wiber requiere una copia impresa O un voucher electrónico. Sin él, podrían no entregar el coche o cobrar de nuevo el alquiler.",
+    "car.bring.license": "Permiso de conducir",
+    "car.bring.license.desc": "Permiso de conducir válido para cada conductor. Debe ser físico — los digitales NO se aceptan. Mínimo 1 año de antigüedad.",
+    "car.bring.id": "Pasaporte o DNI",
+    "car.bring.id.desc": "Pasaporte o DNI de cada conductor. Además, su tarjeta de embarque o billete de avión con la fecha y hora de regreso.",
+    "car.bring.card.desc": "Solo Visa o MasterCard. Tarjeta física obligatoria — no se aceptan prepago, recargables ni virtuales. Se bloqueará un depósito de €1.000. Debe conocer el PIN.",
+    "car.bring.ticket": "Billete de avión / tarjeta de embarque",
+    "car.bring.ticket.desc": "Obligatorio en las recogidas en aeropuerto. Debe mostrar la fecha y hora de salida del vuelo de regreso.",
+    "car.warn.return": "⚠️ ¡Hora de devolución = hora del vuelo! Planifique",
+    "car.warn.return.desc": "La devolución es a las 16:00 — la misma hora que su vuelo FR4765. Devuelva el coche antes de las 12:30 para tener tiempo para la lanzadera, facturación y seguridad. Llene el depósito antes de devolver.",
+    "tip.car.photo.text": "Antes de salir, fotografíe cada panel, paso de rueda, parabrisas e interior — con marca de tiempo. Camine con el agente. Es su protección contra reclamaciones falsas por daños.",
+    "tip.car.fuel.text": "Compruebe el nivel de combustible al recoger. Devuelva con la misma cantidad. Si devuelve con menos, Wiber cobra €19 de recarga + el coste del combustible faltante a precio de mercado.",
+    "tip.car.deposit.title": "Depósito de €1.000 bloqueado",
+    "tip.car.deposit.text": "Wiber bloquea €1.000 en su tarjeta al recoger (franquicia de robo + colisión). Se devuelve tras el alquiler si se cumplen todas las condiciones. Asegúrese de tener saldo suficiente.",
+    "tip.car.specs.title": "Ford Ka — compacto 2 puertas",
+    "tip.car.specs.text": "Clase Mini, manual, aire acondicionado, 4 plazas. Solo 1 maleta grande + 1 pequeña — viaje ligero a Ronda. El acceso a los asientos traseros (2 puertas) puede ser ajustado. Perfecto para las calles estrechas de Ronda.",
+    "tip.car.late.title": "Llegada tardía = sin coche",
+    "tip.car.late.text": "Llegue a la lanzadera a la hora reservada. Si llega tarde y se pasa el margen, el coche puede no estar disponible. Contacte con Wiber al +34 952 004 356 si se retrasa.",
+    "tip.car.age.title": "Edad mínima: 21 años",
+    "tip.car.age.text": "Todos los conductores deben tener al menos 21 años. Se pueden añadir conductores adicionales en el mostrador — cada uno debe presentar su permiso e identificación.",
     "sec.wish.label": "Lista de deseos", "sec.wish.title": "En el radar — si hay tiempo",
     "sec.wish.sub": "Estas no entraron en el plan principal, pero podrían merecer desvíos al volver de Ronda a Málaga.",
     "sec.wish.note": "Estas ideas cercanas y alternativas siguen siendo interesantes:",
@@ -1745,11 +1835,9 @@ const translations = {
     "tip.walk.title": "La ciudad es caminable",
     "tip.emt.title": "App EMT Málaga",
     "tip.queue.title": "Cultura de cola",
-    "tip.car.ibiza.title": "Mejor opción: Seat Ibiza",
-    "tip.car.compare.title": "Dónde comparar", "tip.car.manual.title": "Manual vs automático",
-    "tip.car.credit.title": "Depósito con tarjeta de crédito",
+    "tip.car.credit.title": "Tarjeta de crédito/débito (física)",
     "tip.car.photo.title": "Fotografía cada panel al recoger",
-    "tip.car.fuel.title": "Política de combustible",
+    "tip.car.fuel.title": "Combustible: devolver al mismo nivel",
     "place.alc.name": "Alcazaba + Gibralfaro", "place.picasso.name": "Museo Picasso Málaga",
     "place.muelle.name": "Muelle Uno", "place.malagueta.name": "Playa de La Malagueta",
     "place.hammam.name": "Hammam Al Ándalus", "place.beach.name": "Playa + Chiringuito",
@@ -1838,7 +1926,7 @@ const translations = {
     "tr.d8.cath.title": "⛪ Exteriér katedrály + Prechádzka starým mestom",
     "tr.d8.muelle.title": "⚓ Muelle Uno + Večera",
     "tr.d9.pack.title": "Balenie + posledné raňajky v Livense",
-    "tr.d9.car.title": "🚗 Prevziať požičané auto",
+    "tr.d9.car.title": "🚗 Prevziať auto — Wiber",
     "tr.d9.checkout.title": "Check-out z Livense + odchod z Málagy",
     "tr.d9.arrive.title": "Príchod do Rondy · Check-in · Obed",
     "tr.d9.puente.title": "🌉 Puente Nuevo + Rokľa El Tajo",
@@ -1859,11 +1947,49 @@ const translations = {
     "tr.d11.return.title": "Návrat do Málagy · Voliteľná zastávka Antequera",
     "tr.d13.morning.title": "Voľné ráno — len ľahká aktivita",
     "tr.d13.checkout.title": "Check-out z Flores · Naložiť auto",
-    "tr.d13.carreturn.title": "🚗 Vrátiť auto na letisku AGP",
+    "tr.d13.carreturn.title": "🚗 Vrátiť auto — Wiber",
     "tr.d13.security.title": "Check-in na letisku + bezpečnostná kontrola",
     "tr.d13.depart.title": "✈️ Odlet z Málagy — FR4765",
     "sec.transport.label": "Doprava", "sec.transport.title": "Mestská doprava v Málage",
-    "sec.car.label": "Požičovňa áut", "sec.car.title": "Požičané auto — Letisko Málaga",
+    "sec.car.label": "Požičovňa áut", "sec.car.title": "Požičané auto — Rezervované ✅",
+    "sec.car.sub": "Wiber Rent a Car · 5 dní · Prevzatie 9. júla · Vrátenie 13. júla · Letisko Málaga (mimo letiska, kyvadlová doprava)",
+    "car.booking.label": "Rezervácia č.:", "car.driver.label": "Hlavný vodič:", "car.car.label": "Auto:",
+    "car.luggage.label": "Batožina:", "car.pickup.label": "Prevzatie:", "car.return.label": "Vrátenie:",
+    "car.insurance.label": "Poistenie:", "car.deposit.label": "Záloha:", "car.fuel.label": "Palivo:",
+    "car.price.label": "Celkom zaplatené:",
+    "car.pickup.instructions.label": "Pokyny na prevzatie — Kyvadlová doprava z letiska",
+    "car.pickup.instructions.title": "📍 Ako nájsť kyvadlovú dopravu Wiber na letisku Málaga",
+    "car.pickup.step1": "Vyjdite z terminálu a prejdite cez priechod pre chodcov.",
+    "car.pickup.step2": "Pokračujte rovno podľa značiek s nápisom „Cercanías" (železničná stanica) a prejdite cez ďalší priechod pre chodcov.",
+    "car.pickup.step3": "Napravo za múrom železničnej stanice „Cercanías" nájdete parkovisko so žltými čiarami.",
+    "car.pickup.step4": "Pokračujte po žltých čiarach až na koniec. Kyvadlová doprava Wiber vás vyzdvihne medzi predposledným a posledným šedým stĺpom, pri druhom priechode pre chodcov.",
+    "car.pickup.important": "⚠️ Dôležité: Odporúčame si vziať tieto informácie so sebou na letisko.",
+    "car.dropoff.label": "Informácie o vrátení",
+    "car.dropoff.title": "📍 Miesto vrátenia",
+    "car.dropoff.hours.label": "Hodiny:",
+    "car.dropoff.note": "Personál vám pri prevzatí vysvetlí postup vrátenia.",
+    "car.bring.label": "Čo si priniesť pri prevzatí",
+    "car.bring.voucher": "Voucher (vytlačený alebo elektronický)",
+    "car.bring.voucher.desc": "Wiber vyžaduje vytlačenú kópiu ALEBO elektronický voucher. Bez neho nemusia auto vydať alebo môžu znova účtovať prenájom.",
+    "car.bring.license": "Vodičský preukaz",
+    "car.bring.license.desc": "Platný vodičský preukaz každého vodiča. Musí byť fyzický — digitálne sa NEAKCEPTUJÚ. Minimálne 1 rok od vydania.",
+    "car.bring.id": "Pas alebo občiansky preukaz",
+    "car.bring.id.desc": "Pas alebo OP každého vodiča. Plus palubný lístok alebo letenka s dátumom a časom spiatočného letu.",
+    "car.bring.card.desc": "Iba Visa alebo MasterCard. Vyžaduje sa fyzická karta — predplatené, dobíjacie a virtuálne karty sa NEAKCEPTUJÚ. Záloha €1 000 bude zablokovaná. Musíte poznať PIN.",
+    "car.bring.ticket": "Letenka / palubný lístok",
+    "car.bring.ticket.desc": "Povinné pri prevzatí na letisku. Musí ukazovať dátum a čas odletu spiatočného letu.",
+    "car.warn.return": "⚠️ Čas vrátenia = čas letu! Plánujte dopredu",
+    "car.warn.return.desc": "Vrátenie je o 16:00 — rovnaký čas ako váš let FR4765. Vráťte auto do 12:30 najneskôr, aby ste stihli kyvadlovú dopravu, check-in a bezpečnostnú kontrolu. Natankujte pred vrátením.",
+    "tip.car.photo.text": "Pred odchodom odfotografujte každý panel, blatník, čelné sklo a interiér — s časovou pečiatkou. Obíďte auto s pracovníkom. Toto je vaša ochrana proti falošným nárokom na poškodenie.",
+    "tip.car.fuel.text": "Skontrolujte hladinu paliva pri prevzatí. Vráťte s rovnakým množstvom. Ak vrátite s menším, Wiber účtuje €19 poplatok za tankovanie + náklady na chýbajúce palivo v trhovej cene.",
+    "tip.car.deposit.title": "Záloha €1 000 zablokovaná",
+    "tip.car.deposit.text": "Wiber zablokuje €1 000 na vašej karte pri prevzatí (spoluúčasť na krádeži + kolízii). Vrátené po prenájme, ak sú splnené všetky podmienky. Uistite sa, že máte na karte dostatočný zostatok.",
+    "tip.car.specs.title": "Ford Ka — kompaktný 2-dverový",
+    "tip.car.specs.text": "Trieda Mini, manuál, klimatizácia, 4 miesta. Iba 1 veľká + 1 malá batožina — zabaľte nalahko na Rondu. Prístup k zadným sedadlám (2 dvere) môže byť tesný. Ideálne na úzke ulice v Ronde.",
+    "tip.car.late.title": "Neskorý príchod = žiadne auto",
+    "tip.car.late.text": "Prísťe ku kyvadlovej doprave v rezervovanom čase. Ak meškáte a uplynie aj časová rezerva, auto nemusí byť k dispozícii. Kontaktujte Wiber na +34 952 004 356 v prípade meškania.",
+    "tip.car.age.title": "Minimálny vek: 21 rokov",
+    "tip.car.age.text": "Všetci vodiči musia mať aspoň 21 rokov. Dodatočných vodičov možno pridať na prepážke — každý musí predložiť svoj vodičský preukaz a doklad totožnosti.",
     "sec.wish.label": "Wish-list", "sec.wish.title": "Na radare — ak bude čas",
     "sec.wish.sub": "Tieto miesta nešli do hlavného plánu, ale mohli by stáť za odbočku pri návrate z Rondy do Málagy.",
     "sec.wish.note": "Tieto blízke nápady a alternatívy stoja za zváženie:",
@@ -1878,11 +2004,9 @@ const translations = {
     "tip.walk.title": "Centrum je prístupné pešo",
     "tip.emt.title": "Aplikácia EMT Málaga",
     "tip.queue.title": "Kultúra fronty",
-    "tip.car.ibiza.title": "Najlepšia voľba: Seat Ibiza",
-    "tip.car.compare.title": "Kde porovnávať", "tip.car.manual.title": "Manuál vs automat",
-    "tip.car.credit.title": "Depozit kreditnou kartou",
+    "tip.car.credit.title": "Kreditná/debetná karta (fyzická)",
     "tip.car.photo.title": "Odfotiť každý panel pri prevzatí",
-    "tip.car.fuel.title": "Podmienky tankování",
+    "tip.car.fuel.title": "Palivo: vrátiť na rovnakej úrovni",
     "place.alc.name": "Alcazaba + Gibralfaro", "place.picasso.name": "Múzeum Picassa Málaga",
     "place.muelle.name": "Muelle Uno", "place.malagueta.name": "Pláž La Malagueta",
     "place.hammam.name": "Hammam Al Ándalus", "place.beach.name": "Pláž + Chiringuito",
